@@ -1,0 +1,4 @@
+interface:
+  display_name: "Human 2.0 Cover Generator"
+  short_description: "Generate minimalist Human 2.0 article and post covers from text."
+  default_prompt: "Create a minimalist Human 2.0 style cover from the article or post text, choosing a concise headline and suitable visual metaphor."
