@@ -4,9 +4,15 @@ Use this file when refining a generation or before generating an image where exa
 
 ## Logo fidelity
 
-Do not invent a new Human 2.0 logo. If exact logo fidelity is uncertain, use a simple H2.0 badge plus text.
+Do not invent or redraw the Human 2.0 logo. If the logo must be visible, use the official PNG/SVG asset from `human20.app/brand` and preserve its original aspect ratio.
 
-Correct:
+If the official asset is not attached or available, use a safe fallback:
+
+- leave clean space for manual logo placement
+- use plain text: `Человек 2.0 · Среда внедрения ИИ`
+- use a simple `H2.0` text badge only if the user accepts approximation
+
+Correct text:
 
 - `H2.0`
 - `Человек 2.0`
@@ -18,6 +24,9 @@ Avoid:
 - `H 2.0`
 - `H-2.0`
 - changed badge proportions
+- generated logo redraws
+- stretched footer badges
+- corrupted brand text
 
 ## Russian copy
 
