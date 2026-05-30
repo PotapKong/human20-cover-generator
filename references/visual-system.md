@@ -18,6 +18,24 @@ Use this layout for Dzen / Telegram / article covers:
 - Soft shadow under white surfaces.
 - Editorial/product-slide feel, not generic SaaS illustration.
 
+## Official color system
+
+Use the official Human 2.0 brandbook as the source of truth: `human20.app/brand`.
+
+Palette:
+
+- Accent / H2.0 sign: `#6366F1`
+- Primary text: `#2C2C2C`
+- Canvas background: `#F3F4F6`
+- Surface background: `#FFFFFF`
+- Gold accent: `#C4A148`
+
+The primary accent is always indigo/blue `#6366F1`. Use it for highlighted words, connector lines, nodes, arrows, progress bars, active UI states, and badges.
+
+Gold `#C4A148` is secondary and should stay tiny: one dot, small spark, small checkmark, minor divider, or micro-highlight.
+
+Do not use green as a Human 2.0 accent color. Green is allowed only if it is part of a real screenshot or official third-party UI that must be preserved. When adapting UI cards into the Human 2.0 style, replace non-essential green accents with indigo/blue.
+
 ## Visual hierarchy
 
 1. Headline first.
