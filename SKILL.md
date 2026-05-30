@@ -1,22 +1,34 @@
 ---
 name: human20-cover-generator
-description: Create minimalist Human 2.0 branded article, Telegram, Dzen, and social cover images from a post/article text. Use when the user asks to придумать/сгенерировать/перегенерировать баннер, обложку, картинку, cover, image, illustration, or заменить перегруженную инфографику for a text; when they want a short Russian headline on the image; when they mention Human 2.0 brand style, brandbook, logos, mascots, or fitting a provided image/logo into a clean Human 2.0 layout.
+description: Create premium Human 2.0 branded article, Telegram, Dzen, Instagram/Reels, and social cover images from a post/article text. Use when the user asks to придумать/сгенерировать/перегенерировать баннер, обложку, картинку, cover, image, illustration, инфографику, vertical reels cover, or заменить перегруженную инфографику for a text; when they want a short Russian headline on the image; when they mention Human 2.0 brand style, brandbook, logos, mascots, GPT Image, or fitting a provided image/logo into a clean Human 2.0 layout.
 ---
 
 # Human 2.0 Cover Generator
 
 ## Overview
 
-Turn article/post text into a minimal, editorial Human 2.0 cover. Prefer one clear idea, one short headline, one visual metaphor, and a restrained brand-system composition over dense infographics.
+Turn article/post text into a premium, minimal, editorial Human 2.0 visual. Prefer one clear idea, one short headline, one strong metaphor, and a restrained brand-system composition over dense infographics.
 
 If the user asks to generate immediately, use the built-in image generation flow after shaping the concept. Do not stop at a prompt unless the user asks only for a prompt.
 
 ## Core Workflow
 
 1. Read the supplied text and extract the central editorial claim, not every detail.
-2. Choose one short Russian headline that is understandable in a feed. Prefer concrete wording over poetic ambiguity.
-3. Build one minimal visual metaphor that supports the claim.
-4. Apply Human 2.0 brand rules:
+2. Choose the generation mode:
+   - `Dzen / Telegram cover` for 16:9 article thumbnails.
+   - `Instagram / Reels cover` for 9:16 vertical covers.
+   - `Clean infographic` for tables, charts, comparison cards, or data visuals.
+   - `Premium object cover` when the user asks for a more Instagram-native, cinematic, or hyperreal image.
+   - `Refinement` when fixing a failed generation, typography, crop, logo, or brand mismatch.
+3. Read the relevant references before prompting:
+   - `references/visual-system.md` for the Human 2.0 visual language.
+   - `references/formats.md` for aspect ratio and safe-zone rules.
+   - `references/generation-modes.md` for image prompt mode.
+   - `references/anti-patterns.md` when refining or avoiding recurring failures.
+   - `references/cover-patterns.md` when choosing between several concepts or improving a weak metaphor.
+4. Choose one short Russian headline that is understandable in a feed. Prefer concrete wording over poetic ambiguity.
+5. Build one minimal visual metaphor that supports the claim.
+6. Apply Human 2.0 brand rules:
    - canvas `#F3F4F6`
    - white surfaces `#FFFFFF`
    - graphite text/lines `#2C2C2C`
@@ -24,33 +36,65 @@ If the user asks to generate immediately, use the built-in image generation flow
    - gold `#C4A148` only as a tiny secondary accent
    - modern clean sans-serif typography in the spirit of Onest/Geologica
    - calm, precise, practical, premium editorial tone
-5. Use a horizontal `16:9` cover by default for Dzen/Telegram/social feeds.
-6. Generate the image with `image_gen` when requested. Keep the final response concise: headline, metaphor, and any caveat about generated text/logo fidelity.
+7. Generate the image with image generation when requested. Keep the final response concise: concept, headline, and any caveat about generated text/logo fidelity.
+
+## Brand Language Rules
+
+In Russian copy, write `ИИ`, not `AI`, except when `AI` is part of an official English name, quote, URL, citation, or unchanged product/standard name.
+
+Use these brand names exactly:
+
+- `Человек 2.0`
+- `H2.0`
+- `Среда внедрения ИИ`
+
+Avoid:
+
+- `Human20` as a public replacement for the brand name
+- `H 2.0`
+- `H-2.0`
+- invented logos or distorted H2.0 badges
 
 ## Headline Rules
 
-Use one large headline on the image, usually 2 lines. Make it feed-readable and tied to the article's practical consequence.
+Use one large headline on the image, usually 2 lines for horizontal covers and 3-5 short lines for Reels. Make it feed-readable and tied to the article's practical consequence.
 
 Prefer:
+
 - `АГЕНТСКИЙ КОДИНГ ТЕПЕРЬ СО СЧЁТЧИКОМ`
 - `ПЛАГИНЫ ТЕПЕРЬ ЧИНЯТСЯ ОТДЕЛЬНО`
 - `В OPENCLAW 5.4 ПОЧИНИЛИ АВТОЗАПУСК`
 - `ОПЫТ - НОВОЕ ТОПЛИВО ИИ`
 - `ОДНА ЗАПИСЬ - МНОГО ВИДЕО`
+- `КУРСЫ ПО ИИ УСТАРЕВАЮТ БЫСТРЕЕ`
+- `ВСЕ СООБЩЕСТВА ДОЛЖНЫ БЫТЬ AGENT FIRST`
 
 Avoid:
+
 - restating the first sentence without sharpening it
 - vague poetic lines that need the post to explain them
 - long subtitles, tables, and tiny UI labels
-- marketing mush such as "революция", "будущее уже здесь", "новая эра" unless the article itself truly argues that
+- marketing mush such as `революция`, `будущее уже здесь`, `новая эра` unless the article itself truly argues that
+- more than 5-7 generated words when exact Russian text fidelity is critical
 
 If the user proposes a better headline, use it and regenerate rather than defending the previous line.
 
 ## Composition Rules
 
-Default structure: large headline + one white rounded editorial panel + one continuous indigo path or focal object. Use at most 3-4 meaningful visual elements.
+Default 16:9 structure: large headline on the left + one white rounded editorial panel or one focal object on the right + one continuous indigo path. Use at most 3-4 meaningful visual elements.
+
+Signature Human 2.0 elements:
+
+- Huge Geologica-like headline, black with 1 indigo accent word.
+- White rounded panels with soft shadows.
+- Thin indigo connector lines with small circular nodes.
+- Small H2.0 badge/footer in the bottom-left safe zone.
+- Optional 3x3 dot pattern in top-right or bottom-left.
+- Tiny gold dot, spark, divider, or checkmark only as accent.
+- Strong negative space and calm premium editorial layout.
 
 Use these metaphors:
+
 - route/control: nodes, switches, fallback paths, checkmarks
 - long task durability: path, checkpoints, restore/gateway, finish mark
 - agent tooling: schedule/clock -> tool chips -> result card
@@ -58,15 +102,18 @@ Use these metaphors:
 - media generation: chat -> tool tile/logo -> image/video cards
 - avatar/content system: phone capture -> reusable presenter card -> small credit meter
 - learning from experience: text pages fading -> board/action loop -> reward dot
+- course vs living environment: crossed-out crown/course artifact -> living system/panel/environment
+- community memory: chat stream -> structured memory -> agent-accessible skill cards
 
 Avoid:
-- dense before/after panels
+
+- dense before/after panels unless the user explicitly asks for a comparison infographic
 - pricing tables
 - benchmark grids
 - many service logos
 - subscription buttons
 - emojis
-- robots, generic AI brain, cyberpunk, neon
+- generic robot brain, cyberpunk, neon
 - fake dense UI text
 - huge green checkmarks
 - cluttered infographic logic
@@ -76,21 +123,23 @@ Avoid:
 Use logos or mascots only when they materially improve recognition of the article topic.
 
 Rules:
+
 - If the user attaches a logo/mascot/image, use it as a reference and preserve its identity.
-- If a current logo is needed and not supplied, search the web for official brand assets or reliable visual references before prompting.
+- If a current third-party logo is needed and not supplied, search the web for official brand assets or reliable visual references before prompting.
 - Keep third-party logos small-to-medium and harmonized with Human 2.0. They should not dominate the cover unless the article is primarily about that brand.
 - Never turn a comparison into an aggressive fight poster. Show the advantage through layout: open routes, fallback paths, control, completed result, or clean workflow.
 - If editing an existing image, preserve the image content and frame it inside a Human 2.0 layout instead of redrawing it, unless the user asks for a new illustration.
+- If exact Human 2.0 logo fidelity is uncertain, use a simple H2.0 badge plus text rather than inventing a new logo.
 
 ## Image Prompt Template
 
 Use this structure when calling image generation:
 
 ```text
-Create a minimalist Yandex Zen / Telegram article cover image in the Human 2.0 brand style for a Russian post about <topic>.
+Create a premium Human 2.0 branded <FORMAT> image for a Russian post/article about <topic>.
 
 Format:
-Horizontal 16:9 social/news cover, readable in feed, clean and minimal.
+<16:9 Dzen/Telegram cover OR 9:16 Instagram/Reels cover OR 4:3/1:1 infographic>. Use safe margins and keep all important text away from edges.
 
 Brand style:
 Use Human 2.0 visual identity: light gray canvas #F3F4F6, white surfaces #FFFFFF, dark graphite typography and lines #2C2C2C, primary indigo accent #6366F1. Use gold #C4A148 only as a tiny secondary accent. Modern clean sans-serif typography similar to Onest/Geologica. Calm, precise, practical, premium editorial style.
@@ -102,17 +151,27 @@ Visual concept:
 <one sparse metaphor with 3-4 elements max>
 
 Composition:
-Large headline with generous negative space. One clean white rounded panel. Use restrained indigo connectors/paths and tiny gold accent only where useful. Avoid dense infographic structure.
+<mode-specific composition from references/formats.md and references/generation-modes.md>. Keep a small Human 2.0 / H2.0 brand mark integrated in the safe zone. Use restrained indigo connectors/paths and tiny gold accent only where useful.
 
 Text on image:
 Use only this Russian headline, large and clean:
 "<HEADLINE>"
-Small subtle caption, optional:
+Optional small caption only if there is enough space:
 "<short product/topic caption>"
 
 Style constraints:
-Minimal vector-like editorial illustration, flat shapes, crisp edges, subtle depth, generous spacing, restrained palette. No subscription button, no emojis, no robots, no cyberpunk, no neon, no fake dense UI text, no clutter, no watermark.
+Minimal premium editorial cover, crisp modern layout, subtle depth, generous spacing, restrained palette. No subscription button, no emojis, no cyberpunk, no neon, no fake dense UI text, no clutter, no watermark. In Russian text use "ИИ", not "AI", except official names or quoted terms.
 ```
+
+## Refinement Workflow
+
+When the user asks to fix a generated image:
+
+1. Preserve the strongest existing composition unless the user asks to redesign.
+2. Identify exactly what failed: text, logo, crop, visual density, brand mismatch, wrong format, or weak metaphor.
+3. Use `references/anti-patterns.md` to prevent repeating the error.
+4. For text fixes, reduce the amount of generated text or leave clean negative space for manual typography.
+5. For crop fixes, extend canvas/outpaint rather than shrinking core content when the user asks not to change the infographic.
 
 ## Quality Check
 
@@ -125,5 +184,9 @@ Before finalizing, check the generated cover against these criteria:
 - Any logos/mascots are recognizable but integrated.
 - Generated Russian text has no obvious spelling artifacts. If text is messy, regenerate with fewer words or no in-image text.
 - The cover has no subscription button, fake tables, dense tiny labels, or visual clutter.
+- Text is readable at thumbnail size.
+- Critical text and brand marks sit inside the safe zone for the target format.
 
-For detailed reusable patterns and examples, read [references/cover-patterns.md](references/cover-patterns.md) only when choosing between several concepts or refining a failed generation.
+## Evaluation Set
+
+Use `references/evals.md` to test the skill on representative Human 2.0 tasks before major changes. A good version should produce images comparable to the user's references: clean, premium, branded, practical, and topic-specific.
