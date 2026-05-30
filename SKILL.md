@@ -14,23 +14,28 @@ If the user asks to generate immediately, use the built-in image generation flow
 ## Core Workflow
 
 1. Read the supplied text and extract the central editorial claim, not every detail.
-2. Choose the generation mode:
+2. Choose the audience mode:
+   - `Mass audience` for Dzen, Instagram, Telegram, entrepreneurs, creators, and non-technical readers.
+   - `Editorial / expert` for readers who already follow ИИ tools and product names.
+   - `Technical` only when the post is clearly for developers or the user asks for a technical cover.
+3. Choose the generation mode:
    - `Dzen / Telegram cover` for 16:9 article thumbnails.
    - `Instagram / Reels cover` for 9:16 vertical covers.
    - `Clean infographic` for tables, charts, comparison cards, or data visuals.
    - `Premium object cover` when the user asks for a more Instagram-native, cinematic, or hyperreal image.
    - `Refinement` when fixing a failed generation, typography, crop, logo, or brand mismatch.
-3. Read the relevant references before prompting:
+4. Read the relevant references before prompting:
+   - `references/headline-patterns.md` before choosing the headline.
    - `references/reference-gallery.md` first, to choose the closest proven Human 2.0 archetype.
    - `references/visual-system.md` for the Human 2.0 visual language.
    - `references/formats.md` for aspect ratio and safe-zone rules.
    - `references/generation-modes.md` for image prompt mode.
    - `references/anti-patterns.md` when refining or avoiding recurring failures.
    - `references/cover-patterns.md` when choosing between several concepts or improving a weak metaphor.
-4. Choose one short Russian headline that is understandable in a feed. Prefer concrete wording over poetic ambiguity.
-5. Choose the closest reference archetype from `references/reference-gallery.md` and explicitly adapt the image to that archetype rather than inventing a generic layout.
-6. Build one minimal visual metaphor that supports the claim.
-7. Apply Human 2.0 brand rules:
+5. Choose one short Russian headline that is understandable in a feed. For broad-audience covers, lead with benefit or use case, not tool internals.
+6. Choose the closest reference archetype from `references/reference-gallery.md` and explicitly adapt the image to that archetype rather than inventing a generic layout.
+7. Build one minimal visual metaphor that supports the claim.
+8. Apply Human 2.0 brand rules:
    - canvas `#F3F4F6`
    - white surfaces `#FFFFFF`
    - graphite text/lines `#2C2C2C`
@@ -38,7 +43,7 @@ If the user asks to generate immediately, use the built-in image generation flow
    - gold `#C4A148` only as a tiny secondary accent
    - modern clean sans-serif typography in the spirit of Onest/Geologica
    - calm, precise, practical, premium editorial tone
-8. Generate the image with image generation when requested. Keep the final response concise: concept, headline, and any caveat about generated text/logo fidelity.
+9. Generate the image with image generation when requested. Keep the final response concise: concept, headline, and any caveat about generated text/logo fidelity.
 
 ## Brand Language Rules
 
@@ -59,25 +64,45 @@ Avoid:
 
 ## Headline Rules
 
-Use one large headline on the image, usually 2 lines for horizontal covers and 3-5 short lines for Reels. Make it feed-readable and tied to the article's practical consequence.
+Use one large headline on the image, usually 2 lines for horizontal covers and 3-5 short lines for Reels. Make it feed-readable visually and semantically.
 
-Prefer:
+For Dzen, Telegram, Instagram, and other broad-audience covers, the headline should explain what the tool does or why the reader should care. A person unfamiliar with the tool should understand the value immediately.
 
+Priority:
+
+1. Clear user benefit
+2. Real-world use case
+3. Tool or product name
+4. Technical proof
+5. Implementation details
+
+Prefer benefit-first headlines:
+
+- `БЫСТРАЯ РАСШИФРОВКА АУДИО`
+- `ЛОКАЛЬНАЯ ТРАНСКРИБАЦИЯ АУДИО`
+- `ДЛИННЫЕ АУДИО БОЛЬШЕ НЕ НУЖНО ЖДАТЬ`
+- `ВЫШЕЛ БЫСТРЫЙ WHISPER ДЛЯ GPU И MAC`
+- `КАК БЫСТРО РАСШИФРОВАТЬ ДЛИННОЕ АУДИО`
 - `АГЕНТСКИЙ КОДИНГ ТЕПЕРЬ СО СЧЁТЧИКОМ`
 - `ПЛАГИНЫ ТЕПЕРЬ ЧИНЯТСЯ ОТДЕЛЬНО`
-- `В OPENCLAW 5.4 ПОЧИНИЛИ АВТОЗАПУСК`
 - `ОПЫТ - НОВОЕ ТОПЛИВО ИИ`
 - `ОДНА ЗАПИСЬ - МНОГО ВИДЕО`
 - `КУРСЫ ПО ИИ УСТАРЕВАЮТ БЫСТРЕЕ`
 - `ВСЕ СООБЩЕСТВА ДОЛЖНЫ БЫТЬ AGENT FIRST`
 
-Avoid:
+Avoid as main headline for a broad audience:
 
+- `WHISPER НА УСКОРЕНИИ`
+- `ТРАНСКРИБАЦИЯ НА MPS`
+- `FLASH ATTENTION ДЛЯ WHISPER`
+- `CLI ДЛЯ BATCHING`
 - restating the first sentence without sharpening it
 - vague poetic lines that need the post to explain them
 - long subtitles, tables, and tiny UI labels
 - marketing mush such as `революция`, `будущее уже здесь`, `новая эра` unless the article itself truly argues that
 - more than 5-7 generated words when exact Russian text fidelity is critical
+
+Move technical details such as CLI, MPS, fp16, batching, Flash Attention, Transformers, Optimum, gateway, orchestration, or MCP into the article body or a small caption unless the user explicitly wants a technical cover.
 
 If the user proposes a better headline, use it and regenerate rather than defending the previous line.
 
@@ -145,6 +170,9 @@ Create a premium Human 2.0 branded <FORMAT> image for a Russian post/article abo
 Format:
 <16:9 Dzen/Telegram cover OR 9:16 Instagram/Reels cover OR 4:3/1:1 infographic>. Use safe margins and keep all important text away from edges.
 
+Audience mode:
+<Mass audience OR Editorial / expert OR Technical>. For mass audience, make the headline benefit-first and understandable to non-technical readers.
+
 Reference archetype:
 Use the closest archetype from references/reference-gallery.md: <archetype name>. Preserve its layout logic, hierarchy, spacing, and visual motifs while adapting the metaphor to this article.
 
@@ -185,6 +213,7 @@ When the user asks to fix a generated image:
 Before finalizing, check the generated cover against these criteria:
 
 - The headline is understandable without reading the post.
+- For broad-audience covers, the practical benefit is clearer than the tool internals.
 - The image communicates one idea, not a list of features.
 - The palette reads Human 2.0, not purple SaaS, cyberpunk, or stock tech.
 - Gold is a small accent, not the dominant look.
