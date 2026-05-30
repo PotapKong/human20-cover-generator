@@ -21,14 +21,16 @@ If the user asks to generate immediately, use the built-in image generation flow
    - `Premium object cover` when the user asks for a more Instagram-native, cinematic, or hyperreal image.
    - `Refinement` when fixing a failed generation, typography, crop, logo, or brand mismatch.
 3. Read the relevant references before prompting:
+   - `references/reference-gallery.md` first, to choose the closest proven Human 2.0 archetype.
    - `references/visual-system.md` for the Human 2.0 visual language.
    - `references/formats.md` for aspect ratio and safe-zone rules.
    - `references/generation-modes.md` for image prompt mode.
    - `references/anti-patterns.md` when refining or avoiding recurring failures.
    - `references/cover-patterns.md` when choosing between several concepts or improving a weak metaphor.
 4. Choose one short Russian headline that is understandable in a feed. Prefer concrete wording over poetic ambiguity.
-5. Build one minimal visual metaphor that supports the claim.
-6. Apply Human 2.0 brand rules:
+5. Choose the closest reference archetype from `references/reference-gallery.md` and explicitly adapt the image to that archetype rather than inventing a generic layout.
+6. Build one minimal visual metaphor that supports the claim.
+7. Apply Human 2.0 brand rules:
    - canvas `#F3F4F6`
    - white surfaces `#FFFFFF`
    - graphite text/lines `#2C2C2C`
@@ -36,7 +38,7 @@ If the user asks to generate immediately, use the built-in image generation flow
    - gold `#C4A148` only as a tiny secondary accent
    - modern clean sans-serif typography in the spirit of Onest/Geologica
    - calm, precise, practical, premium editorial tone
-7. Generate the image with image generation when requested. Keep the final response concise: concept, headline, and any caveat about generated text/logo fidelity.
+8. Generate the image with image generation when requested. Keep the final response concise: concept, headline, and any caveat about generated text/logo fidelity.
 
 ## Brand Language Rules
 
@@ -125,6 +127,8 @@ Use logos or mascots only when they materially improve recognition of the articl
 Rules:
 
 - If the user attaches a logo/mascot/image, use it as a reference and preserve its identity.
+- If the user attaches strong visual references, treat them as the current quality bar and extract the layout pattern, typography scale, palette, spacing, and motif before generating.
+- If no visual references are attached, use `references/reference-gallery.md` as the persistent internal reference library.
 - If a current third-party logo is needed and not supplied, search the web for official brand assets or reliable visual references before prompting.
 - Keep third-party logos small-to-medium and harmonized with Human 2.0. They should not dominate the cover unless the article is primarily about that brand.
 - Never turn a comparison into an aggressive fight poster. Show the advantage through layout: open routes, fallback paths, control, completed result, or clean workflow.
@@ -140,6 +144,9 @@ Create a premium Human 2.0 branded <FORMAT> image for a Russian post/article abo
 
 Format:
 <16:9 Dzen/Telegram cover OR 9:16 Instagram/Reels cover OR 4:3/1:1 infographic>. Use safe margins and keep all important text away from edges.
+
+Reference archetype:
+Use the closest archetype from references/reference-gallery.md: <archetype name>. Preserve its layout logic, hierarchy, spacing, and visual motifs while adapting the metaphor to this article.
 
 Brand style:
 Use Human 2.0 visual identity: light gray canvas #F3F4F6, white surfaces #FFFFFF, dark graphite typography and lines #2C2C2C, primary indigo accent #6366F1. Use gold #C4A148 only as a tiny secondary accent. Modern clean sans-serif typography similar to Onest/Geologica. Calm, precise, practical, premium editorial style.
@@ -186,6 +193,7 @@ Before finalizing, check the generated cover against these criteria:
 - The cover has no subscription button, fake tables, dense tiny labels, or visual clutter.
 - Text is readable at thumbnail size.
 - Critical text and brand marks sit inside the safe zone for the target format.
+- The chosen reference archetype is visible in the layout, not just mentioned in the prompt.
 
 ## Evaluation Set
 
