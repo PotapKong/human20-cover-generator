@@ -1,0 +1,84 @@
+# Anti-patterns
+
+Use this file when refining a generation or before generating an image where exact brand and text fidelity matters.
+
+## Logo fidelity
+
+Do not invent a new Human 2.0 logo. If exact logo fidelity is uncertain, use a simple H2.0 badge plus text.
+
+Correct:
+
+- `H2.0`
+- `Человек 2.0`
+- `Среда внедрения ИИ`
+
+Avoid:
+
+- `Human20` as a public brand replacement
+- `H 2.0`
+- `H-2.0`
+- changed badge proportions
+
+## Russian copy
+
+In Russian copy, write `ИИ`, not `AI`, except official English names, URLs, citations, direct quotes, or unchanged product names.
+
+Use:
+
+- `ИИ-агенты`
+- `ИИ-образование`
+- `ИИ-инструменты`
+
+## Text volume
+
+Do not generate long subtitles, source lines, tables, or tiny UI labels inside images.
+
+Use:
+
+- one headline
+- optional 1 short caption
+- abstract bars instead of fake UI paragraphs
+
+## Generic SaaS look
+
+Avoid generic purple dashboards, random floating cards with meaningless labels, generic robot brain visuals, stock tech blobs, and blue/purple neon sci-fi styling.
+
+Replace with:
+
+- Human 2.0 white surfaces
+- indigo route lines
+- small gold accents
+- one grounded metaphor from the article
+
+## Thumbnail strength
+
+For Dzen and Instagram, the headline must be readable at small size.
+
+Avoid thin fonts, small captions as the main idea, too many lines, and low contrast text.
+
+## Overexplained infographic
+
+Do not visualize every article point. Choose one editorial claim.
+
+Bad direction: 8 cards, 12 arrows, 4 logos, 20 labels.
+Good direction: one input, one transformation, one outcome.
+
+## Russian text reliability
+
+If Russian text must be exact, keep it short. If the phrase is complex, generate the image with clean space and add text manually later.
+
+Safe text lengths:
+
+- 1-4 words: usually safe
+- 5-7 words: acceptable
+- 8+ words: higher risk
+
+## Crop and safe zones
+
+For Reels, keep the main phrase in the top/middle safe area and do not place important brand or text at extreme edges.
+
+For outpainting, preserve the existing graphic and extend only the background.
+
+## Gold usage
+
+Gold is a secondary accent, not the main UI color. Use it for small dots, sparkles, dividers, or one hero object when the metaphor requires it, such as a crown.
