@@ -11,7 +11,7 @@ Use this layout for Dzen / Telegram / article covers:
 - One accent word or phrase in indigo `#6366F1`.
 - Main visual object or white rounded panel on the right.
 - Thin indigo connector lines, small circular nodes.
-- Small H2.0 badge in the bottom-left safe zone.
+- Small official H2.0 / Human 2.0 logo asset in the bottom-left safe zone.
 - Optional 3x3 dot pattern in top-right or bottom-left.
 - Tiny gold `#C4A148` accent only as dot, spark, checkmark, or divider.
 - Generous negative space.
@@ -39,8 +39,11 @@ Do not make the viewer decode a complex schema before understanding the claim.
 
 Use one of:
 
-- `H2.0` badge + `Человек 2.0 / Среда внедрения ИИ`
-- compact `H2.0` badge only if space is tight
+- official PNG/SVG `H2.0` badge + `Человек 2.0 / Среда внедрения ИИ`
+- official compact `H2.0` badge only if space is tight
+- plain text fallback `Человек 2.0 · Среда внедрения ИИ` if no official logo asset is available
+
+Never ask the image model to redraw the official logo from memory. If the exact PNG/SVG asset is not available, leave space for manual logo placement or use the plain text fallback.
 
 Never write:
 
