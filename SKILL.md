@@ -27,6 +27,7 @@ If the user asks to generate immediately, use the built-in image generation flow
 4. Read the relevant references before prompting:
    - `references/headline-patterns.md` before choosing the headline.
    - `references/logo-assets.md` before adding any Human 2.0 logo or footer.
+   - `references/product-assets.md` before adding third-party logos, product screenshots, website screenshots, GitHub screenshots, or article screenshots.
    - `references/reference-gallery.md` first, to choose the closest proven Human 2.0 archetype.
    - `references/visual-system.md` for the Human 2.0 visual language.
    - `references/formats.md` for aspect ratio and safe-zone rules.
@@ -146,20 +147,23 @@ Avoid:
 - huge green checkmarks
 - cluttered infographic logic
 
-## Logos, Mascots, And References
+## Logos, Mascots, Screenshots, And References
 
-Use logos or mascots only when they materially improve recognition of the article topic.
+Use logos, mascots, screenshots, or website/article captures only when they materially improve recognition or credibility of the cover.
 
 Rules:
 
 - Human 2.0 logos must come from official PNG/SVG assets from the brandbook at `human20.app/brand` or from attached official logo files.
 - Do not ask the image model to invent, redraw, retype, stretch, or approximate the Human 2.0 logo.
-- If no official logo asset is available, leave clean space for manual logo placement or use the plain text fallback `Человек 2.0 · Среда внедрения ИИ`.
-- If the official logo is attached, preserve it exactly and place it as a composited asset in the bottom-left safe zone.
-- If the user attaches a logo/mascot/image, use it as a reference and preserve its identity.
+- If no official Human 2.0 asset is available, leave clean space for manual logo placement or use the plain text fallback `Человек 2.0 · Среда внедрения ИИ`.
+- Third-party logos and product marks must come from official websites, official docs, official GitHub repositories, official social/profile assets, or user-provided reference files.
+- When the user mentions `Hermes`, `Hermes Agent`, or Hermes in the agent/tooling context, treat it as `Hermes Agent` by `Nous Research`. Use `hermes-agent.nousresearch.com`, `nousresearch.com`, or user-provided Hermes references as the visual source. Do not invent a winged H logo or generic Hermes mark.
+- If the official third-party logo cannot be obtained, use a clean text-only product card instead of a fake logo.
+- If the user asks to overlay a reference screenshot or article screenshot, frame it inside a rounded white card/browser frame, crop only to the meaningful area, and preserve its aspect ratio.
+- If the user attaches a logo/mascot/image/screenshot, use it as a reference and preserve its identity.
 - If the user attaches strong visual references, treat them as the current quality bar and extract the layout pattern, typography scale, palette, spacing, and motif before generating.
 - If no visual references are attached, use `references/reference-gallery.md` as the persistent internal reference library.
-- If a current third-party logo is needed and not supplied, search the web for official brand assets or reliable visual references before prompting.
+- If a current third-party logo or screenshot is needed and not supplied, search the web for official brand assets, product pages, docs, GitHub pages, and reliable visual references before prompting.
 - Keep third-party logos small-to-medium and harmonized with Human 2.0. They should not dominate the cover unless the article is primarily about that brand.
 - Never turn a comparison into an aggressive fight poster. Show the advantage through layout: open routes, fallback paths, control, completed result, or clean workflow.
 - If editing an existing image, preserve the image content and frame it inside a Human 2.0 layout instead of redrawing it, unless the user asks for a new illustration.
@@ -179,6 +183,9 @@ Audience mode:
 
 Reference archetype:
 Use the closest archetype from references/reference-gallery.md: <archetype name>. Preserve its layout logic, hierarchy, spacing, and visual motifs while adapting the metaphor to this article.
+
+Asset sources:
+Use official or user-provided assets for all recognizable logos, product marks, mascots, website screenshots, GitHub screenshots, and article screenshots. If the product is Hermes, use Hermes Agent by Nous Research as the source, not a generic Hermes mark. If an official asset is unavailable, use a text-only product card and do not invent a fake logo.
 
 Brand style:
 Use Human 2.0 visual identity: light gray canvas #F3F4F6, white surfaces #FFFFFF, dark graphite typography and lines #2C2C2C, primary indigo accent #6366F1. Use gold #C4A148 only as a tiny secondary accent. Modern clean sans-serif typography similar to Onest/Geologica. Calm, precise, practical, premium editorial style.
@@ -213,8 +220,10 @@ When the user asks to fix a generated image:
 2. Identify exactly what failed: text, logo, crop, visual density, brand mismatch, wrong format, or weak metaphor.
 3. Use `references/anti-patterns.md` to prevent repeating the error.
 4. For text fixes, reduce the amount of generated text or leave clean negative space for manual typography.
-5. For logo fixes, use an official logo PNG/SVG from `human20.app/brand` or leave space for manual logo placement. Do not regenerate the logo from memory.
-6. For crop fixes, extend canvas/outpaint rather than shrinking core content when the user asks not to change the infographic.
+5. For Human 2.0 logo fixes, use an official logo PNG/SVG from `human20.app/brand` or leave space for manual logo placement. Do not regenerate the logo from memory.
+6. For third-party logo fixes, search the official source or use a user-provided asset. If the asset cannot be verified, replace the fake logo with a text-only product card.
+7. For screenshot fixes, crop/frame the real screenshot instead of recreating it as fake UI.
+8. For crop fixes, extend canvas/outpaint rather than shrinking core content when the user asks not to change the infographic.
 
 ## Quality Check
 
@@ -226,7 +235,10 @@ Before finalizing, check the generated cover against these criteria:
 - The palette reads Human 2.0, not purple SaaS, cyberpunk, or stock tech.
 - Gold is a small accent, not the dominant look.
 - Human 2.0 logo is either an official asset, a plain text fallback, or absent with clean space reserved for manual placement.
+- Third-party logos are official/user-provided assets or replaced with text-only cards.
+- If Hermes is mentioned, it is represented as Hermes Agent by Nous Research, not a fake generic Hermes logo.
 - The logo is not stretched, retyped, approximated, or distorted.
+- Screenshots are real/user-provided/officially sourced, cropped cleanly, and framed without distortion.
 - Generated Russian text has no obvious spelling artifacts. If text is messy, regenerate with fewer words or no in-image text.
 - The cover has no subscription button, fake tables, dense tiny labels, or visual clutter.
 - Text is readable at thumbnail size.
