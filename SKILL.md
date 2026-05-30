@@ -26,6 +26,7 @@ If the user asks to generate immediately, use the built-in image generation flow
    - `Refinement` when fixing a failed generation, typography, crop, logo, or brand mismatch.
 4. Read the relevant references before prompting:
    - `references/headline-patterns.md` before choosing the headline.
+   - `references/logo-assets.md` before adding any Human 2.0 logo or footer.
    - `references/reference-gallery.md` first, to choose the closest proven Human 2.0 archetype.
    - `references/visual-system.md` for the Human 2.0 visual language.
    - `references/formats.md` for aspect ratio and safe-zone rules.
@@ -115,7 +116,7 @@ Signature Human 2.0 elements:
 - Huge Geologica-like headline, black with 1 indigo accent word.
 - White rounded panels with soft shadows.
 - Thin indigo connector lines with small circular nodes.
-- Small H2.0 badge/footer in the bottom-left safe zone.
+- Small official H2.0 / Human 2.0 logo asset in the bottom-left safe zone.
 - Optional 3x3 dot pattern in top-right or bottom-left.
 - Tiny gold dot, spark, divider, or checkmark only as accent.
 - Strong negative space and calm premium editorial layout.
@@ -151,6 +152,10 @@ Use logos or mascots only when they materially improve recognition of the articl
 
 Rules:
 
+- Human 2.0 logos must come from official PNG/SVG assets from the brandbook at `human20.app/brand` or from attached official logo files.
+- Do not ask the image model to invent, redraw, retype, stretch, or approximate the Human 2.0 logo.
+- If no official logo asset is available, leave clean space for manual logo placement or use the plain text fallback `Человек 2.0 · Среда внедрения ИИ`.
+- If the official logo is attached, preserve it exactly and place it as a composited asset in the bottom-left safe zone.
 - If the user attaches a logo/mascot/image, use it as a reference and preserve its identity.
 - If the user attaches strong visual references, treat them as the current quality bar and extract the layout pattern, typography scale, palette, spacing, and motif before generating.
 - If no visual references are attached, use `references/reference-gallery.md` as the persistent internal reference library.
@@ -158,7 +163,6 @@ Rules:
 - Keep third-party logos small-to-medium and harmonized with Human 2.0. They should not dominate the cover unless the article is primarily about that brand.
 - Never turn a comparison into an aggressive fight poster. Show the advantage through layout: open routes, fallback paths, control, completed result, or clean workflow.
 - If editing an existing image, preserve the image content and frame it inside a Human 2.0 layout instead of redrawing it, unless the user asks for a new illustration.
-- If exact Human 2.0 logo fidelity is uncertain, use a simple H2.0 badge plus text rather than inventing a new logo.
 
 ## Image Prompt Template
 
@@ -179,6 +183,9 @@ Use the closest archetype from references/reference-gallery.md: <archetype name>
 Brand style:
 Use Human 2.0 visual identity: light gray canvas #F3F4F6, white surfaces #FFFFFF, dark graphite typography and lines #2C2C2C, primary indigo accent #6366F1. Use gold #C4A148 only as a tiny secondary accent. Modern clean sans-serif typography similar to Onest/Geologica. Calm, precise, practical, premium editorial style.
 
+Logo/footer:
+Use the official attached Human 2.0 logo asset exactly as provided. Preserve its aspect ratio and place it in the bottom-left safe zone. If no official logo asset is available, leave clean space for manual logo placement or use only the plain text footer `Человек 2.0 · Среда внедрения ИИ`. Do not redraw or approximate the logo.
+
 Core meaning:
 <one paragraph explaining the article's main claim and why the reader should care>
 
@@ -186,7 +193,7 @@ Visual concept:
 <one sparse metaphor with 3-4 elements max>
 
 Composition:
-<mode-specific composition from references/formats.md and references/generation-modes.md>. Keep a small Human 2.0 / H2.0 brand mark integrated in the safe zone. Use restrained indigo connectors/paths and tiny gold accent only where useful.
+<mode-specific composition from references/formats.md and references/generation-modes.md>. Use restrained indigo connectors/paths and tiny gold accent only where useful.
 
 Text on image:
 Use only this Russian headline, large and clean:
@@ -206,7 +213,8 @@ When the user asks to fix a generated image:
 2. Identify exactly what failed: text, logo, crop, visual density, brand mismatch, wrong format, or weak metaphor.
 3. Use `references/anti-patterns.md` to prevent repeating the error.
 4. For text fixes, reduce the amount of generated text or leave clean negative space for manual typography.
-5. For crop fixes, extend canvas/outpaint rather than shrinking core content when the user asks not to change the infographic.
+5. For logo fixes, use an official logo PNG/SVG from `human20.app/brand` or leave space for manual logo placement. Do not regenerate the logo from memory.
+6. For crop fixes, extend canvas/outpaint rather than shrinking core content when the user asks not to change the infographic.
 
 ## Quality Check
 
@@ -217,7 +225,8 @@ Before finalizing, check the generated cover against these criteria:
 - The image communicates one idea, not a list of features.
 - The palette reads Human 2.0, not purple SaaS, cyberpunk, or stock tech.
 - Gold is a small accent, not the dominant look.
-- Any logos/mascots are recognizable but integrated.
+- Human 2.0 logo is either an official asset, a plain text fallback, or absent with clean space reserved for manual placement.
+- The logo is not stretched, retyped, approximated, or distorted.
 - Generated Russian text has no obvious spelling artifacts. If text is messy, regenerate with fewer words or no in-image text.
 - The cover has no subscription button, fake tables, dense tiny labels, or visual clutter.
 - Text is readable at thumbnail size.
