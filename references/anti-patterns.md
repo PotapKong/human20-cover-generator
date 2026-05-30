@@ -28,6 +28,28 @@ Avoid:
 - stretched footer badges
 - corrupted brand text
 
+## Color drift
+
+Do not drift away from the Human 2.0 brand palette.
+
+Correct palette:
+
+- indigo/blue `#6366F1` as the primary accent
+- graphite `#2C2C2C` for text and dark lines
+- light gray `#F3F4F6` for canvas
+- white `#FFFFFF` for surfaces
+- tiny gold `#C4A148` only as a secondary micro-accent
+
+Avoid:
+
+- green or lime as primary accent
+- cyberpunk green/black styling
+- generic purple gradients
+- large gold fills
+- random extra colors
+
+Green is allowed only inside a preserved real screenshot or official third-party UI. If the UI card is being adapted to Human 2.0, replace green status indicators, progress bars, and code highlights with indigo/blue.
+
 ## Russian copy
 
 In Russian copy, write `ИИ`, not `AI`, except official English names, URLs, citations, direct quotes, or unchanged product names.
