@@ -7,9 +7,29 @@ description: Create premium Human 2.0 branded article, Telegram, Dzen, Instagram
 
 ## Overview
 
-Turn article/post text into a premium, minimal, editorial Human 2.0 visual. Prefer one clear idea, one short headline, one strong metaphor, and a restrained brand-system composition over dense infographics.
+Turn article/post text into a premium, juicy, editorial Human 2.0 cover. Prefer one clear idea, one short headline, one strong metaphor, and a bold generated visual over dense infographics or code-built layouts.
 
 If the user asks to generate immediately, use the built-in image generation flow after shaping the concept. Do not stop at a prompt unless the user asks only for a prompt.
+
+## Generative-First Rule
+
+GPT Image 2 should create the actual cover art and composition: hero object, lighting, depth, particles, soft UI surfaces, route lines, icons, and overall atmosphere. Do not replace image generation with a PIL/HTML/SVG reconstruction of the cover. Code/manual compositing is allowed only for narrow production fixes:
+
+- overlay the official Human 2.0 logo asset if the generated logo is wrong;
+- replace or sharpen the exact headline if Russian text fidelity fails;
+- insert a real screenshot when the screenshot itself is the requested evidence.
+
+Never use code to draw the main composition, cards, panels, shadows, icons, or "template base" unless the user explicitly asks for a deterministic infographic. If a generated cover feels weak, regenerate with a stronger concept instead of assembling a safe layout manually.
+
+## Generation Feedback Loop
+
+Use this loop for every production cover:
+
+1. Generate a finished GPT Image 2 cover from the chosen Reference DNA archetype.
+2. Inspect it against `references/reference-dna.md` and the Quality Check below.
+3. If the result is generic, card-heavy, low-energy, or has no dominant hero/proof, regenerate with a stronger object/evidence concept.
+4. If only the logo, exact headline, or exact screenshot is wrong, make a narrow production fix using the official asset or real screenshot.
+5. Do not turn a weak generation into a final cover by rebuilding it in code.
 
 ## Mandatory Reference Intake
 
@@ -17,6 +37,7 @@ Before calling image generation or writing a final image prompt, you MUST comple
 
 Always read these reference files for new cover generation:
 
+- `references/reference-dna.md`
 - `references/headline-patterns.md`
 - `references/reference-gallery.md`
 - `references/visual-system.md`
@@ -39,6 +60,7 @@ Before image generation, name the reference intake in your working notes or prom
 - generation mode
 - selected reference archetype
 - whether `TOP Reference` was used, and if not, why
+- selected Reference DNA archetype
 - 3-5 visible traits copied from the references or gallery
 - typography rule
 - palette rule
@@ -63,15 +85,16 @@ Do not call image generation if you cannot name the selected archetype and at le
 5. Choose one short Russian headline that is understandable in a feed. For broad-audience covers, lead with benefit or use case, not tool internals.
 6. Choose the closest reference archetype from `references/reference-gallery.md` and explicitly adapt the image to that archetype rather than inventing a generic layout.
 7. Build one minimal visual metaphor that supports the claim.
-8. Apply Human 2.0 brand rules:
+8. Choose the Reference DNA archetype from `references/reference-dna.md`.
+9. Apply Human 2.0 brand rules:
    - canvas `#F3F4F6`
    - white surfaces `#FFFFFF`
    - graphite text/lines `#2C2C2C`
    - primary indigo accent `#6366F1`
    - gold `#C4A148` only as a tiny secondary accent
-   - modern clean sans-serif typography in the spirit of Onest/Geologica
+   - ultra-condensed display typography for the main headline, with Onest/Geologica only for captions and brand support text
    - calm, precise, practical, premium editorial tone
-9. Generate the image with image generation when requested. Keep the final response concise: concept, headline, and any caveat about generated text/logo fidelity.
+10. Generate the image with GPT Image 2 / built-in image generation when requested. Keep the final response concise: concept, headline, and any caveat about generated text/logo fidelity.
 
 ## Brand Language Rules
 
@@ -136,13 +159,48 @@ If the user proposes a better headline, use it and regenerate rather than defend
 
 ## Composition Rules
 
-Default 16:9 structure: large headline on the left + one white rounded editorial panel or one focal object on the right + one continuous indigo path. Use at most 3-4 meaningful visual elements.
+Default 16:9 structure: large headline + one strong generated visual answer: either a hyperreal/editorial hero object, a cinematic product scene, a framed real screenshot/evidence moment, or one concise product surface. Add a continuous indigo path only when it clarifies the idea. Use at most 3-4 meaningful visual elements.
 
 Do not default to a repeated right-side workflow/card block just because the article mentions processes, tools, or skills. Use that structure only when the inspected references support it for the specific topic. If `TOP Reference` is present, prefer its premium editorial object/hero rhythm over a generic card grid: expressive headline, one strong object or framed evidence, controlled depth, and sparse supporting icons.
 
+### Anti-Template Lock
+
+Before prompting GPT Image, choose the thumbnail hook in this order:
+
+1. A strong editorial object/metaphor from the article.
+2. A real screenshot or product evidence framed as the hero.
+3. A single product/workspace panel.
+4. A workflow/card diagram only if the user asks for process visualization or the inspected reference clearly uses that structure.
+
+If the first prompt idea is `white panel + 4 cards + connector line`, reject it unless there is a concrete reason it will be more clickable than a hero object or framed evidence. For GPT Image 2, prompt a finished cover, not an empty placeholder scene. Reserve manual compositing only as a correction step after generation, not as the default design method.
+
+### Juicy Cover Standard
+
+The best Human 2.0 covers feel like editorial posters, not SaaS wireframes. A strong result usually has:
+
+- one thumb-stopping object or product scene with depth, gloss, rupture, light, material contrast, or motion;
+- a huge ultra-condensed headline that dominates the feed;
+- Human 2.0 white/indigo/gold system elements integrated into the scene, not pasted as decoration;
+- small supporting UI icons/cards only as satellites around the hero, never as the main content by default;
+- visible tension from the article: broken old habit, opened route, controlled pipeline, finished artifact, warning state, or upgrade moment.
+
+If the image could be reused for ten unrelated AI posts by only changing the headline, reject the concept and regenerate.
+
+### Reference DNA Lock
+
+After inspecting the user/repo references, map the cover to one of `references/reference-dna.md`:
+
+- Broken Old Model / Crown
+- Premium Device / Agent Inside
+- Evidence Collage
+- Real Screen Hero
+- Before / After Product Outcome
+
+Do not generate until the prompt names one of these and describes the dominant proof/hero. When the topic is about a repo, article, benchmark, conference, audit, or public claim, prefer `Evidence Collage` or `Real Screen Hero` over a generic workflow.
+
 Signature Human 2.0 elements:
 
-- Huge Geologica-like headline, black with 1 indigo accent word.
+- Huge ultra-condensed display headline, black with 1 indigo accent word.
 - White rounded panels with soft shadows.
 - Thin indigo connector lines with small circular nodes.
 - Small official H2.0 / Human 2.0 logo asset in the bottom-left safe zone.
@@ -152,12 +210,26 @@ Signature Human 2.0 elements:
 
 Typography and color must match the reference system closely:
 
-- Use Geologica-like heavy condensed display type for headlines, not a generic narrow system font.
+- Match the headline font class from the inspected references. Current premium references use an ultra-condensed poster/display grotesk: very tall narrow glyphs, tight line-height, hard vertical strokes, and minimal roundness.
+- Do not default to `Geologica.ttf` for the main headline when references show this ultra-condensed style. Geologica is too wide/soft for those covers and is only a fallback for non-reference work.
+- If rendering typography manually and no exact reference font is bundled, prefer an available licensed ultra-condensed Cyrillic display face over Geologica/Arial Narrow. If exact fidelity is required, stop and ask for or source the exact display font asset.
 - Use graphite `#2C2C2C` for dark headline words and `#6366F1` for the single indigo accent phrase.
-- If rendering typography manually, use the bundled `assets/brand/Geologica.ttf` with a heavy weight variation where available.
+- If rendering secondary brand text manually, use the bundled `assets/brand/Geologica.ttf` or `assets/brand/Onest.ttf` where appropriate.
 - Do not let screenshots or generated gradients drift the overall palette away from the Human 2.0 reference.
 
-Use these metaphors:
+### Headline Font Consistency Lock
+
+For every Dzen / Telegram / horizontal Human 2.0 cover:
+
+1. Inspect the supplied/user/exported references and name the headline font class before rendering.
+2. If the references use the current premium ultra-condensed style, the main headline must use that class. It must not use Geologica, Onest, Arial, Arial Narrow, Inter, Segoe UI, or a generic geometric sans.
+3. Preferred durable asset order:
+   - exact user-provided or repo-bundled licensed display font, such as `assets/brand/h20-display-condensed.ttf` if present;
+   - an available licensed ultra-condensed Cyrillic display face with comparable proportions;
+4. When exact Russian text and brand typography matter, first try a short generated headline in the GPT Image cover. If it fails, replace only the headline in a narrow correction pass while preserving the generated design.
+5. Final quality gate: compare the headline against the closest reference. If letters are too wide, too rounded, too soft, or the line rhythm looks like Geologica rather than a tall poster grotesk, reject and rerender typography before final delivery.
+
+Use these metaphors as starting points, but turn them into one decisive cover image rather than a generic diagram:
 
 - route/control: nodes, switches, fallback paths, checkmarks
 - long task durability: path, checkpoints, restore/gateway, finish mark
@@ -168,6 +240,7 @@ Use these metaphors:
 - learning from experience: text pages fading -> board/action loop -> reward dot
 - course vs living environment: crossed-out crown/course artifact -> living system/panel/environment
 - community memory: chat stream -> structured memory -> agent-accessible skill cards
+- SEO / AI-search article pipeline: a finished article artifact being scanned by search/AI beams, a polished document moving through verification gates, or a browser/repo evidence panel orbiting one hero document; avoid a flat checklist of cards
 
 Avoid:
 
@@ -223,6 +296,9 @@ Audience mode:
 Reference archetype:
 Use the closest archetype from references/reference-gallery.md: <archetype name>. Preserve its layout logic, hierarchy, spacing, and visual motifs while adapting the metaphor to this article.
 
+Reference DNA:
+Use the closest archetype from references/reference-dna.md: <Broken Old Model / Crown OR Premium Device / Agent Inside OR Evidence Collage OR Real Screen Hero OR Before / After Product Outcome>. The dominant hero/proof is <one sentence>. Supporting cards/icons are satellites only.
+
 Reference evidence:
 Use these concrete traits from the 3-5 inspected references or gallery: <3-5 traits covering layout, typography scale, spacing, palette, motif, visual density, and whether the right-side visual should be a workflow, large screen, object, or mixed panel>.
 
@@ -230,7 +306,7 @@ Asset sources:
 Use official or user-provided assets for all recognizable logos, product marks, mascots, website screenshots, GitHub screenshots, and article screenshots. If the product is Hermes, use Hermes Agent by Nous Research as the source, not a generic Hermes mark. If an official asset is unavailable, use a text-only product card and do not invent a fake logo.
 
 Brand style:
-Use Human 2.0 visual identity: light gray canvas #F3F4F6, white surfaces #FFFFFF, dark graphite typography and lines #2C2C2C, primary indigo accent #6366F1. Use gold #C4A148 only as a tiny secondary accent. Do not use green as an accent except inside preserved real screenshots. Modern clean sans-serif typography similar to Onest/Geologica. Calm, precise, practical, premium editorial style.
+Use Human 2.0 visual identity: light gray canvas #F3F4F6, white surfaces #FFFFFF, dark graphite typography and lines #2C2C2C, primary indigo accent #6366F1. Use gold #C4A148 only as a tiny secondary accent. Do not use green as an accent except inside preserved real screenshots. Main headline typography must match the reference font class; for current premium references this means an ultra-condensed poster/display grotesk, not Geologica. Use Onest/Geologica only for captions, brand support text, and secondary UI-like labels. Calm, precise, practical, premium editorial style.
 
 Logo/footer:
 Use the official attached Human 2.0 logo asset exactly as provided. Preserve its aspect ratio and place it in the bottom-left safe zone. If no official logo asset is available, leave clean space for manual logo placement or use only the plain text footer `Человек 2.0 · Среда внедрения ИИ`. Do not redraw or approximate the logo.
@@ -242,7 +318,7 @@ Visual concept:
 <one sparse metaphor with 3-4 elements max>
 
 Composition:
-<mode-specific composition from references/formats.md and references/generation-modes.md>. Use restrained indigo connectors/paths and tiny gold accent only where useful.
+<mode-specific composition from references/formats.md and references/generation-modes.md>. Make this a finished GPT Image 2 cover, not a blank base for later layout. Use restrained indigo connectors/paths and tiny gold accent only where useful.
 
 Text on image:
 Use only this Russian headline, large and clean:
@@ -251,7 +327,7 @@ Optional small caption only if there is enough space:
 "<short product/topic caption>"
 
 Style constraints:
-Minimal premium editorial cover, crisp modern layout, subtle depth, generous spacing, restrained palette. No subscription button, no emojis, no cyberpunk, no neon, no fake dense UI text, no clutter, no watermark. In Russian text use "ИИ", not "AI", except official names or quoted terms.
+Premium editorial cover, juicy but restrained, crisp modern layout, strong depth/materiality, generous spacing, restrained palette. No placeholder composition, no blank text zones, no subscription button, no emojis, no cyberpunk, no neon, no fake dense UI text, no clutter, no watermark. In Russian text use "ИИ", not "AI", except official names or quoted terms.
 ```
 
 ## Refinement Workflow
@@ -272,10 +348,16 @@ When the user asks to fix a generated image:
 Before finalizing, check the generated cover against these criteria:
 
 - Mandatory Reference Intake was completed before generation.
+- `references/reference-dna.md` was applied and the selected DNA archetype is visible.
 - The selected reference archetype and 3 concrete visual traits are visible in the result, not just mentioned in the prompt.
+- The headline font class matches the inspected reference; if the reference uses ultra-condensed display typography, the final headline is not rendered in Geologica, Onest, Arial, Arial Narrow, Inter, or Segoe UI.
 - The headline is understandable without reading the post.
 - For broad-audience covers, the practical benefit is clearer than the tool internals.
 - The image communicates one idea, not a list of features.
+- GPT Image produced the main visual/composition. Manual code was not used to construct the cover, except for narrow logo/headline/screenshot correction.
+- The cover has a thumb-stopping hook: hero object, cinematic product scene, framed proof moment, or strong visual tension.
+- The result would not look like a generic reusable AI-template if the headline were swapped.
+- Cards/routes/icons are satellites around the hero unless the user asked for a workflow diagram.
 - The palette reads Human 2.0, not purple SaaS, cyberpunk, or stock tech.
 - Custom accents are indigo/blue `#6366F1`, not green/lime.
 - Gold is a small accent, not the dominant look.
@@ -288,6 +370,7 @@ Before finalizing, check the generated cover against these criteria:
 - Generated Russian text has no obvious spelling artifacts. If text is messy, regenerate with fewer words or no in-image text.
 - The cover has no subscription button, fake tables, dense tiny labels, or visual clutter.
 - Text is readable at thumbnail size.
+- If typography was composited manually, the final response or working notes name the headline font used.
 - Critical text and brand marks sit inside the safe zone for the target format.
 - The chosen reference archetype is visible in the layout, not just mentioned in the prompt.
 

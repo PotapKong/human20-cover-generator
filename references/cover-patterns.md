@@ -11,8 +11,20 @@ Convert the article into this internal brief:
 - Reader consequence: what the reader should do differently.
 - Tension: convenience vs control, fixed price vs meter, chat answer vs real work, one-off tool vs workflow layer.
 - Visual metaphor: one object/path/panel that shows the consequence.
+- Thumbnail hook: why this image would stop scrolling before the reader reads the small text.
 
 Do not visualize all facts. Visualize the decision the reader should remember.
+
+## Generative Direction
+
+Use GPT Image 2 to make the full cover feel alive. Prompt for the finished poster: lighting, depth, material, motion, evidence, headline hierarchy, and Human 2.0 accents together. Do not prompt a sterile base with empty zones unless you are only fixing text/logo after a failed generation.
+
+When the result looks like an old template, increase the concept before increasing the number of UI elements:
+
+- add one physical or semi-physical hero object;
+- show transformation, rupture, scan, validation, route opening, or completion;
+- make a real screenshot/evidence panel a secondary proof point, not the whole design;
+- keep cards/icons as satellites around the object.
 
 ## TOP Reference Priority
 
@@ -25,6 +37,7 @@ The TOP Reference favors:
 - sparse supporting icons
 - Human 2.0 logo used exactly
 - strong depth and material contrast where appropriate
+- generated visual energy: particles, reflections, soft glow, blur, motion, or tactile object detail used with restraint
 
 It does not favor repeating the same right-side workflow/card block for every post. Use workflow cards only when they are the actual metaphor, not as a default layout.
 
@@ -54,7 +67,7 @@ Use direct product names when recognition matters:
 
 ### Release/update posts
 
-Visual: one clean panel with the fixed workflow.
+Visual: one clean product scene with the fixed workflow, or a hero object that signals the update. Avoid equal-weight cards unless they are the story.
 
 Examples:
 - schedule -> tools -> result
@@ -68,7 +81,7 @@ Headline style:
 
 ### Agent/runtime durability
 
-Visual: long path with checkpoints, restore symbol, final check.
+Visual: long path with checkpoints, restore symbol, final check; make the path feel physical or cinematic, not a flat diagram.
 
 Headline style:
 - `ЗАДАЧА ДОЛЖНА ДОЙТИ ДО КОНЦА`
@@ -120,6 +133,15 @@ If user provides a detailed historical/illustrative image, do not replace it wit
 
 Example:
 - `МЕНЬШЕ ЧЕЛНОКА, БОЛЬШЕ КОНТРОЛЯ`
+
+### SEO / AI-answer publishing
+
+Visual: one finished article/document artifact or browser page being scanned, cited, and validated by Google/search and ИИ-answer signals. A real GitHub/README screenshot can appear as a small framed proof point. Avoid turning the cover into a pipeline diagram with `plan/article/schema/review` cards.
+
+Headline style:
+- `БЛОГ ПОД GOOGLE И ИИ-ОТВЕТЫ`
+- `СТАТЬЯ, КОТОРУЮ МОЖНО ПРОВЕРИТЬ`
+- `SEO-ТЕКСТ БЕЗ РУЧНОГО ХАОСА`
 
 ## Prompt Details That Help
 

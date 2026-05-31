@@ -9,11 +9,14 @@ Use for articles, Dzen, Telegram, and most post covers.
 Prompt emphasis:
 
 - premium editorial cover
+- finished GPT Image 2 cover, not a placeholder base
 - bold Russian headline
 - one metaphor
 - clean product-slide composition
+- real visual hook: object, rupture, glow, proof moment, or cinematic product surface
 - no dense UI text
 - Human 2.0 footer/badge
+- not a reusable card-grid template
 
 Good visual ideas:
 
@@ -23,9 +26,11 @@ Good visual ideas:
 - document stack -> skill card
 - control board with a single active path
 
+First try to express the post as one hero object, real screenshot/evidence panel, or product surface. Use several cards only when they are the actual point of the story. Do not ask for empty right/left zones for later code layout unless doing a correction pass.
+
 ## Premium object cover
 
-Use when user asks for `инстаграммная`, `крутая`, `вау`, `обложка`, cinematic, hyperrealistic, or more premium visual weight.
+Use when user asks for `инстаграммная`, `крутая`, `вау`, `обложка`, cinematic, hyperrealistic, more premium visual weight, or when a normal article cover starts to look templated.
 
 Prompt emphasis:
 
@@ -35,6 +40,7 @@ Prompt emphasis:
 - white/light-gray studio background
 - indigo and gold brand reflections
 - abstract Human 2.0 UI elements around it
+- bold editorial tension: breaking, opening, scanning, validating, routing, upgrading, or transforming
 - no cyberpunk, no neon, no generic stock tech
 
 Good objects:
@@ -45,6 +51,7 @@ Good objects:
 - notebook/grid for orchestrator or workflows
 - control dial/panel for choosing routes
 - white dashboard or monitor for product/tool posts
+- polished document/artifact under search and AI citation beams for SEO/AI-answer posts
 
 ## Clean infographic
 
@@ -62,7 +69,7 @@ Prompt emphasis:
 
 ## UI workflow diagram
 
-Use for posts about agents, MCP, tools, automations, media generation, or workflows.
+Use only when the user asks for a process/workflow visual or when the article's main claim is the sequence itself. Do not use this mode merely because the topic includes agents, MCP, tools, automations, media generation, or skills.
 
 Prompt emphasis:
 
@@ -72,6 +79,7 @@ Prompt emphasis:
 - small nodes and arrows
 - no small unreadable code
 - no fake detailed interface text
+- must still have one dominant focal point, not equal-weight cards
 
 Good flows:
 

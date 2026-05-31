@@ -23,6 +23,15 @@ The image model should not recreate the logo from memory. If exact logo fidelity
 - 9:16 Reels cover: bottom safe zone.
 - Infographic: small footer, only if readable.
 
+For horizontal covers, prefer an integrated lockup:
+
+- H2.0 badge on the left, `Человек 2.0` and `Среда внедрения ИИ` to the right;
+- top-left when the hero object dominates the right side;
+- bottom-left when the headline begins high on the left;
+- compact badge-only only when the composition is already text-heavy.
+
+The logo block must align with the cover grid and surrounding spacing. It should not look like a late overlay.
+
 ## Prompt wording
 
 When an official asset is attached, write:
@@ -38,3 +47,4 @@ Before finalizing, check that:
 - `Среда внедрения ИИ` is spelled correctly.
 - the logo is not stretched or retyped.
 - the logo does not compete with the main headline.
+- the badge and text sit as one lockup, not as disconnected pasted elements.

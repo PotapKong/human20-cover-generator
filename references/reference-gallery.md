@@ -17,6 +17,8 @@ If `references/images/` contains a file whose name starts with `TOP Reference`, 
 
 Use the archetypes below as routing helpers after the TOP Reference, not as permission to ignore the stronger visual benchmark.
 
+Also read `reference-dna.md` for the stronger cross-reference patterns visible in the best covers: crown/object, premium device, evidence collage, real screen hero, and before/after product outcome.
+
 Before generating a cover, choose the closest reference archetype:
 
 1. Editorial workflow cover
@@ -31,16 +33,16 @@ Do not mix more than two archetypes in one image.
 
 ## 1. Editorial workflow cover
 
-Best for: posts about agents, MCP, workflows, skills, communities, automation.
+Best for: posts where the workflow itself is the story. Do not choose this only because the article mentions agents, MCP, skills, automation, or a pipeline.
 
 Look:
 
 - 16:9 light-gray canvas
 - huge black headline on the left
 - one indigo keyword in headline
-- large white rounded panel in center/right
+- large white rounded panel in center/right only if it contains real evidence or one clear product surface
 - thin indigo connector path
-- 3-5 clean UI cards or icons
+- 2-4 clean UI cards or icons max, never as filler
 - H2.0 badge bottom-left
 - 3x3 dot pattern top-right
 
@@ -48,7 +50,7 @@ Typical composition:
 
 `headline -> input card -> agent/tool node -> result cards`
 
-Avoid: tables, many captions, dense fake UI text.
+Avoid: tables, many captions, dense fake UI text, and default `panel + 4 cards` layouts when a hero object or framed screenshot would be more distinctive.
 
 ## 2. Product / tool announcement cover
 
@@ -183,7 +185,7 @@ Avoid: messy handwritten text, too many arrows, low contrast.
 
 When in doubt:
 
-- Article cover: use Editorial workflow cover.
+- Article cover: use Premium object cover or Product / tool announcement cover.
 - Tool/product news: use Product announcement cover.
 - Instagram/Reels: use Reels vertical cover.
 - Big conceptual claim: use Hyperreal premium object cover.

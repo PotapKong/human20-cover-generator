@@ -11,6 +11,7 @@ Expected:
 - 16:9 cover
 - bold headline about the main update
 - clean white panel with 3-4 update cards
+- or one stronger product/update scene with cards as satellites
 - H2.0 badge bottom-left
 - no overloaded changelog table
 
@@ -49,6 +50,19 @@ Expected:
 - Human 2.0 logo/badge integrated
 - no generic online course imagery
 
+## Eval 7: Claude-blog SEO/AI answers
+
+Input: article about `claude-blog` turning article writing into a verifiable pipeline for Google and AI answers.
+
+Expected:
+
+- 16:9 Dzen cover
+- headline like `БЛОГ ПОД GOOGLE И ИИ-ОТВЕТЫ`
+- GPT Image 2 creates the main cover, not a code-drawn template
+- visual metaphor: finished article/browser artifact being scanned, cited, or validated
+- GitHub/README screenshot may be a small framed proof point, not the entire composition
+- no flat `plan -> article -> schema -> review` card row as the main visual
+
 ## Eval 5: Data infographic
 
 Input: chart/table about ИИ-industries vs others, salary premium, productivity, or adoption.
@@ -79,8 +93,11 @@ A generated image passes when:
 
 - the main claim is clear in 2 seconds
 - the image looks like Human 2.0, not generic SaaS
+- it visibly matches one Reference DNA archetype
 - text is short and readable
 - no Russian spelling artifacts are obvious
 - no critical text/logo is outside safe zones
 - visual metaphor fits the article topic
+- the cover has a strong scroll-stopping visual hook, not only a neat diagram
+- the main composition was generated, not rebuilt in code
 - there are no unnecessary extra labels, buttons, tables, or random logos

@@ -81,6 +81,18 @@ Replace with:
 - small gold accents
 - one grounded metaphor from the article
 
+## Code-built covers
+
+Avoid constructing the whole cover in code with rectangles, shadows, icons, and screenshots. It usually produces a dated, dry template.
+
+Use code only for narrow production corrections:
+
+- exact official logo overlay;
+- exact headline replacement after generation;
+- exact screenshot insertion if the screenshot must remain real.
+
+If the concept is weak, regenerate through GPT Image 2 with a stronger metaphor. Do not compensate by adding more manually drawn cards.
+
 ## Thumbnail strength
 
 For Dzen and Instagram, the headline must be readable at small size.
