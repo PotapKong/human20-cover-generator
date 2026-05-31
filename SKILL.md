@@ -31,19 +31,20 @@ Read these conditionally:
 - `references/anti-patterns.md` before refinement, when text/logo/color fidelity matters, or when a previous generation missed the style.
 - `references/cover-patterns.md` when choosing between concepts or improving a weak metaphor.
 
-If `references/images/` contains examples relevant to the requested format or topic, inspect 3-5 closest image files with the available visual tool before prompting. Use fewer only when fewer relevant examples exist or visual inspection is unavailable. Extract the layout pattern, typography scale, palette, spacing, motif, density, and where the examples intentionally break the default card pattern. If visual inspection is unavailable, say that briefly and use `references/reference-gallery.md` as the fallback.
+If `references/images/` contains examples relevant to the requested format or topic, inspect 3-5 closest image files with the available visual tool before prompting. Use fewer only when fewer relevant examples exist or visual inspection is unavailable. If a file name starts with `TOP Reference`, inspect it first and treat it as the primary style benchmark unless the user explicitly asks for a different format. Extract the layout pattern, typography scale, palette, spacing, motif, density, and where the examples intentionally break the default card pattern. If visual inspection is unavailable, say that briefly and use `references/reference-gallery.md` as the fallback.
 
 Before image generation, name the reference intake in your working notes or prompt plan:
 
 - audience mode
 - generation mode
 - selected reference archetype
+- whether `TOP Reference` was used, and if not, why
 - 3-5 visible traits copied from the references or gallery
 - typography rule
 - palette rule
 - anti-patterns being actively avoided
 
-Do not call image generation if you cannot name the selected archetype and at least 3 concrete visual traits from the inspected references.
+Do not call image generation if you cannot name the selected archetype and at least 3 concrete visual traits from the inspected references. If `TOP Reference` exists and was skipped, do not generate until you can state a concrete reason.
 
 ## Core Workflow
 
@@ -137,6 +138,8 @@ If the user proposes a better headline, use it and regenerate rather than defend
 
 Default 16:9 structure: large headline on the left + one white rounded editorial panel or one focal object on the right + one continuous indigo path. Use at most 3-4 meaningful visual elements.
 
+Do not default to a repeated right-side workflow/card block just because the article mentions processes, tools, or skills. Use that structure only when the inspected references support it for the specific topic. If `TOP Reference` is present, prefer its premium editorial object/hero rhythm over a generic card grid: expressive headline, one strong object or framed evidence, controlled depth, and sparse supporting icons.
+
 Signature Human 2.0 elements:
 
 - Huge Geologica-like headline, black with 1 indigo accent word.
@@ -146,6 +149,13 @@ Signature Human 2.0 elements:
 - Optional 3x3 dot pattern in top-right or bottom-left.
 - Tiny gold dot, spark, divider, or checkmark only as accent.
 - Strong negative space and calm premium editorial layout.
+
+Typography and color must match the reference system closely:
+
+- Use Geologica-like heavy condensed display type for headlines, not a generic narrow system font.
+- Use graphite `#2C2C2C` for dark headline words and `#6366F1` for the single indigo accent phrase.
+- If rendering typography manually, use the bundled `assets/brand/Geologica.ttf` with a heavy weight variation where available.
+- Do not let screenshots or generated gradients drift the overall palette away from the Human 2.0 reference.
 
 Use these metaphors:
 

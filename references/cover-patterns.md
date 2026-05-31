@@ -14,6 +14,20 @@ Convert the article into this internal brief:
 
 Do not visualize all facts. Visualize the decision the reader should remember.
 
+## TOP Reference Priority
+
+When a premium Dzen / Telegram cover feels too generic, return to the `TOP Reference` image in `references/images/` before inventing a new structure.
+
+The TOP Reference favors:
+
+- one memorable editorial object or framed proof point
+- expressive headline treatment
+- sparse supporting icons
+- Human 2.0 logo used exactly
+- strong depth and material contrast where appropriate
+
+It does not favor repeating the same right-side workflow/card block for every post. Use workflow cards only when they are the actual metaphor, not as a default layout.
+
 ## Headline Patterns
 
 Good Human 2.0 cover headlines are concrete and slightly compressed:

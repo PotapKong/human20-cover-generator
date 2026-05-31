@@ -4,6 +4,19 @@ Use this file as a text-based reference library for the best Human 2.0 image dir
 
 ## How to use
 
+Before generating a cover, inspect the most relevant visual examples in `references/images/`.
+
+If `references/images/` contains a file whose name starts with `TOP Reference`, inspect it first. It is the primary quality bar for premium Human 2.0 Dzen / Telegram covers:
+
+- huge heavy condensed headline with black and indigo contrast
+- expressive editorial object or framed evidence, not a default card grid
+- controlled depth, blur, reflections, or material detail when useful
+- restrained Human 2.0 palette with indigo and tiny gold accents
+- real H2.0 logo/lockup kept exact and small
+- sparse supporting icons/nodes, never a dense process diagram
+
+Use the archetypes below as routing helpers after the TOP Reference, not as permission to ignore the stronger visual benchmark.
+
 Before generating a cover, choose the closest reference archetype:
 
 1. Editorial workflow cover
