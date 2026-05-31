@@ -11,6 +11,40 @@ Turn article/post text into a premium, minimal, editorial Human 2.0 visual. Pref
 
 If the user asks to generate immediately, use the built-in image generation flow after shaping the concept. Do not stop at a prompt unless the user asks only for a prompt.
 
+## Mandatory Reference Intake
+
+Before calling image generation or writing a final image prompt, you MUST complete a reference intake. Do not rely only on the summary in this `SKILL.md`.
+
+Always read these reference files for new cover generation:
+
+- `references/headline-patterns.md`
+- `references/reference-gallery.md`
+- `references/visual-system.md`
+- `references/accent-colors.md`
+- `references/formats.md`
+- `references/generation-modes.md`
+
+Read these conditionally:
+
+- `references/logo-assets.md` before adding any Human 2.0 logo or footer.
+- `references/product-assets.md` before adding third-party logos, product screenshots, website screenshots, GitHub screenshots, or article screenshots.
+- `references/anti-patterns.md` before refinement, when text/logo/color fidelity matters, or when a previous generation missed the style.
+- `references/cover-patterns.md` when choosing between concepts or improving a weak metaphor.
+
+If `references/images/` contains examples relevant to the requested format or topic, inspect 3-5 closest image files with the available visual tool before prompting. Use fewer only when fewer relevant examples exist or visual inspection is unavailable. Extract the layout pattern, typography scale, palette, spacing, motif, density, and where the examples intentionally break the default card pattern. If visual inspection is unavailable, say that briefly and use `references/reference-gallery.md` as the fallback.
+
+Before image generation, name the reference intake in your working notes or prompt plan:
+
+- audience mode
+- generation mode
+- selected reference archetype
+- 3-5 visible traits copied from the references or gallery
+- typography rule
+- palette rule
+- anti-patterns being actively avoided
+
+Do not call image generation if you cannot name the selected archetype and at least 3 concrete visual traits from the inspected references.
+
 ## Core Workflow
 
 1. Read the supplied text and extract the central editorial claim, not every detail.
@@ -24,16 +58,7 @@ If the user asks to generate immediately, use the built-in image generation flow
    - `Clean infographic` for tables, charts, comparison cards, or data visuals.
    - `Premium object cover` when the user asks for a more Instagram-native, cinematic, or hyperreal image.
    - `Refinement` when fixing a failed generation, typography, crop, logo, or brand mismatch.
-4. Read the relevant references before prompting:
-   - `references/headline-patterns.md` before choosing the headline.
-   - `references/logo-assets.md` before adding any Human 2.0 logo or footer.
-   - `references/product-assets.md` before adding third-party logos, product screenshots, website screenshots, GitHub screenshots, or article screenshots.
-   - `references/reference-gallery.md` first, to choose the closest proven Human 2.0 archetype.
-   - `references/visual-system.md` for the Human 2.0 visual language.
-   - `references/formats.md` for aspect ratio and safe-zone rules.
-   - `references/generation-modes.md` for image prompt mode.
-   - `references/anti-patterns.md` when refining or avoiding recurring failures.
-   - `references/cover-patterns.md` when choosing between several concepts or improving a weak metaphor.
+4. Complete the Mandatory Reference Intake above before prompting.
 5. Choose one short Russian headline that is understandable in a feed. For broad-audience covers, lead with benefit or use case, not tool internals.
 6. Choose the closest reference archetype from `references/reference-gallery.md` and explicitly adapt the image to that archetype rather than inventing a generic layout.
 7. Build one minimal visual metaphor that supports the claim.
@@ -154,9 +179,13 @@ Use logos, mascots, screenshots, or website/article captures only when they mate
 Rules:
 
 - Human 2.0 logos must come from official PNG/SVG assets from the brandbook at `human20.app/brand` or from attached official logo files.
+- If local official assets exist in `assets/brand/`, use them before falling back to plain text. Preferred horizontal cover asset: `assets/brand/h20-lockup-dark-1440.png` or `assets/brand/h20-lockup-dark.svg`.
 - Do not ask the image model to invent, redraw, retype, stretch, or approximate the Human 2.0 logo.
+- When exact logo fidelity matters, generate the cover with clean space for the logo and composite the official PNG/SVG asset after generation. Prompt-only logo recreation is not enough for final production.
 - If no official Human 2.0 asset is available, leave clean space for manual logo placement or use the plain text fallback `Человек 2.0 · Среда внедрения ИИ`.
+- For every named third-party product, platform, market, repository, or company that appears in the article or requested cover, read `references/product-assets.md` and check official sources before deciding whether to use a logo, product chip, screenshot, or text-only fallback.
 - Third-party logos and product marks must come from official websites, official docs, official GitHub repositories, official social/profile assets, or user-provided reference files.
+- When exact third-party logo fidelity matters, use the official PNG/SVG as a final composited overlay or use a text-only product card. Do not rely on image generation to redraw the logo.
 - When the user mentions `Hermes`, `Hermes Agent`, or Hermes in the agent/tooling context, treat it as `Hermes Agent` by `Nous Research`. Use `hermes-agent.nousresearch.com`, `nousresearch.com`, or user-provided Hermes references as the visual source. Do not invent a winged H logo or generic Hermes mark.
 - If the official third-party logo cannot be obtained, use a clean text-only product card instead of a fake logo.
 - If the user asks to overlay a reference screenshot or article screenshot, frame it inside a rounded white card/browser frame, crop only to the meaningful area, and preserve its aspect ratio.
@@ -184,11 +213,14 @@ Audience mode:
 Reference archetype:
 Use the closest archetype from references/reference-gallery.md: <archetype name>. Preserve its layout logic, hierarchy, spacing, and visual motifs while adapting the metaphor to this article.
 
+Reference evidence:
+Use these concrete traits from the 3-5 inspected references or gallery: <3-5 traits covering layout, typography scale, spacing, palette, motif, visual density, and whether the right-side visual should be a workflow, large screen, object, or mixed panel>.
+
 Asset sources:
 Use official or user-provided assets for all recognizable logos, product marks, mascots, website screenshots, GitHub screenshots, and article screenshots. If the product is Hermes, use Hermes Agent by Nous Research as the source, not a generic Hermes mark. If an official asset is unavailable, use a text-only product card and do not invent a fake logo.
 
 Brand style:
-Use Human 2.0 visual identity: light gray canvas #F3F4F6, white surfaces #FFFFFF, dark graphite typography and lines #2C2C2C, primary indigo accent #6366F1. Use gold #C4A148 only as a tiny secondary accent. Modern clean sans-serif typography similar to Onest/Geologica. Calm, precise, practical, premium editorial style.
+Use Human 2.0 visual identity: light gray canvas #F3F4F6, white surfaces #FFFFFF, dark graphite typography and lines #2C2C2C, primary indigo accent #6366F1. Use gold #C4A148 only as a tiny secondary accent. Do not use green as an accent except inside preserved real screenshots. Modern clean sans-serif typography similar to Onest/Geologica. Calm, precise, practical, premium editorial style.
 
 Logo/footer:
 Use the official attached Human 2.0 logo asset exactly as provided. Preserve its aspect ratio and place it in the bottom-left safe zone. If no official logo asset is available, leave clean space for manual logo placement or use only the plain text footer `Человек 2.0 · Среда внедрения ИИ`. Do not redraw or approximate the logo.
@@ -229,13 +261,17 @@ When the user asks to fix a generated image:
 
 Before finalizing, check the generated cover against these criteria:
 
+- Mandatory Reference Intake was completed before generation.
+- The selected reference archetype and 3 concrete visual traits are visible in the result, not just mentioned in the prompt.
 - The headline is understandable without reading the post.
 - For broad-audience covers, the practical benefit is clearer than the tool internals.
 - The image communicates one idea, not a list of features.
 - The palette reads Human 2.0, not purple SaaS, cyberpunk, or stock tech.
+- Custom accents are indigo/blue `#6366F1`, not green/lime.
 - Gold is a small accent, not the dominant look.
 - Human 2.0 logo is either an official asset, a plain text fallback, or absent with clean space reserved for manual placement.
 - Third-party logos are official/user-provided assets or replaced with text-only cards.
+- Any logo that must be exact was composited from an official asset after generation, or clean space was reserved for manual placement.
 - If Hermes is mentioned, it is represented as Hermes Agent by Nous Research, not a fake generic Hermes logo.
 - The logo is not stretched, retyped, approximated, or distorted.
 - Screenshots are real/user-provided/officially sourced, cropped cleanly, and framed without distortion.

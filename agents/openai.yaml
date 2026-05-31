@@ -1,4 +1,4 @@
 interface:
   display_name: "Human 2.0 Cover Generator"
-  short_description: "Generate minimalist Human 2.0 article and post covers from text."
-  default_prompt: "Create a minimalist Human 2.0 style cover from the article or post text, choosing a concise headline and suitable visual metaphor."
+  short_description: "Generate premium Human 2.0 covers using mandatory visual references."
+  default_prompt: "Create a premium Human 2.0 cover from the article or post text. Before generating, read the required references, inspect 3-5 closest reference images when available, check official assets for named products, name the selected archetype, and use a concise Russian headline with Human 2.0 typography, palette, logo, and layout rules."
