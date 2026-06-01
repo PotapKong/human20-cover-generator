@@ -47,10 +47,10 @@ Do not make the viewer decode a complex schema before understanding the claim.
 
 ## Typography
 
-- Headline: ultra-condensed poster/display grotesk when references show it; very tall narrow glyphs, tight line-height, hard vertical strokes, uppercase or near-uppercase.
-- Do not use Geologica for the main headline when the reference examples use the ultra-condensed style; Geologica is too wide/soft and should be reserved for secondary brand/support text or non-reference fallback work.
-- Durable headline font order: exact user/repo-bundled licensed display font first, `assets/brand/h20-display-condensed.ttf` if present, then an available licensed ultra-condensed Cyrillic display face with comparable proportions.
-- If exact typography matters, generate the scene without headline text and composite the headline manually from the chosen font. Reject results where the headline looks wide, rounded, soft, or Geologica-like.
+- Headline: heavy condensed poster/display grotesk when references show it; tall compact glyphs, tight line-height, hard vertical strokes, uppercase or near-uppercase, but not vertically stretched.
+- Do not use Geologica for the main headline when the reference examples use the condensed poster style; Geologica is too wide/soft and should be reserved for secondary brand/support text or non-reference fallback work.
+- Durable headline font order: exact user/repo-bundled licensed display font first, `assets/brand/h20-display-condensed.ttf` if present, then an available licensed heavy condensed Cyrillic display face with comparable proportions.
+- If exact typography matters, generate the scene without headline text and composite the headline manually from the chosen font. Reject results where the headline looks wide, rounded, soft, Geologica-like, needle-thin, or vertically stretched.
 - Body/captions: Onest-like.
 - Avoid long subtitles inside image.
 - If text is generated inside image, use no more than 5-7 words.

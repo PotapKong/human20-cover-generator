@@ -41,6 +41,7 @@ Always read these reference files for new cover generation:
 - `references/headline-patterns.md`
 - `references/reference-gallery.md`
 - `references/visual-system.md`
+- `references/typography-lock.md`
 - `references/accent-colors.md`
 - `references/formats.md`
 - `references/generation-modes.md`
@@ -52,7 +53,7 @@ Read these conditionally:
 - `references/anti-patterns.md` before refinement, when text/logo/color fidelity matters, or when a previous generation missed the style.
 - `references/cover-patterns.md` when choosing between concepts or improving a weak metaphor.
 
-If `references/images/` contains examples relevant to the requested format or topic, inspect 3-5 closest image files with the available visual tool before prompting. Use fewer only when fewer relevant examples exist or visual inspection is unavailable. If a file name starts with `TOP Reference`, inspect it first and treat it as the primary style benchmark unless the user explicitly asks for a different format. Extract the layout pattern, typography scale, palette, spacing, motif, density, and where the examples intentionally break the default card pattern. If visual inspection is unavailable, say that briefly and use `references/reference-gallery.md` as the fallback.
+If `references/images/` contains examples relevant to the requested format or topic, inspect 3-5 closest image files with the available visual tool before prompting. Use fewer only when fewer relevant examples exist or visual inspection is unavailable. If a file name starts with `TOP Reference`, inspect it first and treat it as the primary style benchmark unless the user explicitly asks for a different format. Extract the layout pattern, typography scale, palette, spacing, motif, density, and where the examples intentionally break the default card pattern. If the user supplies fresh typography references, treat those references as the active quality bar and apply `references/typography-lock.md` over generic bundled typography wording. If visual inspection is unavailable, say that briefly and use `references/reference-gallery.md` as the fallback.
 
 Before image generation, name the reference intake in your working notes or prompt plan:
 
@@ -62,7 +63,7 @@ Before image generation, name the reference intake in your working notes or prom
 - whether `TOP Reference` was used, and if not, why
 - selected Reference DNA archetype
 - 3-5 visible traits copied from the references or gallery
-- typography rule
+- typography rule, including whether user-supplied references override the default condensed class
 - palette rule
 - anti-patterns being actively avoided
 
@@ -92,7 +93,7 @@ Do not call image generation if you cannot name the selected archetype and at le
    - graphite text/lines `#2C2C2C`
    - primary indigo accent `#6366F1`
    - gold `#C4A148` only as a tiny secondary accent
-   - ultra-condensed display typography for the main headline, with Onest/Geologica only for captions and brand support text
+   - reference-matched heavy condensed display typography for the main headline, with Onest/Geologica only for captions and brand support text
    - calm, precise, practical, premium editorial tone
 10. Generate the image with GPT Image 2 / built-in image generation when requested. Keep the final response concise: concept, headline, and any caveat about generated text/logo fidelity.
 
@@ -179,7 +180,7 @@ If the first prompt idea is `white panel + 4 cards + connector line`, reject it 
 The best Human 2.0 covers feel like editorial posters, not SaaS wireframes. A strong result usually has:
 
 - one thumb-stopping object or product scene with depth, gloss, rupture, light, material contrast, or motion;
-- a huge ultra-condensed headline that dominates the feed;
+- a huge reference-matched condensed headline that dominates the feed without looking vertically stretched;
 - Human 2.0 white/indigo/gold system elements integrated into the scene, not pasted as decoration;
 - small supporting UI icons/cards only as satellites around the hero, never as the main content by default;
 - visible tension from the article: broken old habit, opened route, controlled pipeline, finished artifact, warning state, or upgrade moment.
@@ -200,7 +201,7 @@ Do not generate until the prompt names one of these and describes the dominant p
 
 Signature Human 2.0 elements:
 
-- Huge ultra-condensed display headline, black with 1 indigo accent word.
+- Huge heavy condensed display headline, black with 1 indigo accent word.
 - White rounded panels with soft shadows.
 - Thin indigo connector lines with small circular nodes.
 - Small official H2.0 / Human 2.0 logo asset in the bottom-left safe zone.
@@ -210,9 +211,10 @@ Signature Human 2.0 elements:
 
 Typography and color must match the reference system closely:
 
-- Match the headline font class from the inspected references. Current premium references use an ultra-condensed poster/display grotesk: very tall narrow glyphs, tight line-height, hard vertical strokes, and minimal roundness.
-- Do not default to `Geologica.ttf` for the main headline when references show this ultra-condensed style. Geologica is too wide/soft for those covers and is only a fallback for non-reference work.
-- If rendering typography manually and no exact reference font is bundled, prefer an available licensed ultra-condensed Cyrillic display face over Geologica/Arial Narrow. If exact fidelity is required, stop and ask for or source the exact display font asset.
+- Match the headline font class, proportions, line rhythm, and spacing from the inspected or user-supplied references. Current premium references use a heavy condensed poster/display grotesk: tall compact glyphs, tight line-height, hard vertical strokes, minimal roundness, and enough width for thumbnail readability.
+- Do not interpret `condensed` as permission to vertically stretch or make needle-thin letters. If the headline looks like ultra-condensed vertical bars or is about 1.25x taller/narrower than the active reference, reject it.
+- Do not default to `Geologica.ttf` for the main headline when references show this condensed poster style. Geologica is too wide/soft for those covers and is only a fallback for non-reference work.
+- If rendering typography manually and no exact reference font is bundled, prefer an available licensed heavy condensed Cyrillic display face with comparable proportions over Geologica/Arial Narrow. If exact fidelity is required, stop and ask for or source the exact display font asset.
 - Use graphite `#2C2C2C` for dark headline words and `#6366F1` for the single indigo accent phrase.
 - If rendering secondary brand text manually, use the bundled `assets/brand/Geologica.ttf` or `assets/brand/Onest.ttf` where appropriate.
 - Do not let screenshots or generated gradients drift the overall palette away from the Human 2.0 reference.
@@ -222,12 +224,12 @@ Typography and color must match the reference system closely:
 For every Dzen / Telegram / horizontal Human 2.0 cover:
 
 1. Inspect the supplied/user/exported references and name the headline font class before rendering.
-2. If the references use the current premium ultra-condensed style, the main headline must use that class. It must not use Geologica, Onest, Arial, Arial Narrow, Inter, Segoe UI, or a generic geometric sans.
+2. If user-supplied typography references are present, they override generic bundled wording. The main headline must match their visible proportions, line height, left spacing, and black/indigo rhythm.
 3. Preferred durable asset order:
    - exact user-provided or repo-bundled licensed display font, such as `assets/brand/h20-display-condensed.ttf` if present;
-   - an available licensed ultra-condensed Cyrillic display face with comparable proportions;
+   - an available licensed heavy condensed Cyrillic display face with comparable proportions;
 4. When exact Russian text and brand typography matter, first try a short generated headline in the GPT Image cover. If it fails, replace only the headline in a narrow correction pass while preserving the generated design.
-5. Final quality gate: compare the headline against the closest reference. If letters are too wide, too rounded, too soft, or the line rhythm looks like Geologica rather than a tall poster grotesk, reject and rerender typography before final delivery.
+5. Final quality gate: compare the headline against the closest reference. If letters are too wide, too rounded, too soft, too narrow, too tall, vertically stretched, or the line rhythm looks unlike the reference poster grotesk, reject and rerender typography before final delivery.
 
 Use these metaphors as starting points, but turn them into one decisive cover image rather than a generic diagram:
 
@@ -306,7 +308,7 @@ Asset sources:
 Use official or user-provided assets for all recognizable logos, product marks, mascots, website screenshots, GitHub screenshots, and article screenshots. If the product is Hermes, use Hermes Agent by Nous Research as the source, not a generic Hermes mark. If an official asset is unavailable, use a text-only product card and do not invent a fake logo.
 
 Brand style:
-Use Human 2.0 visual identity: light gray canvas #F3F4F6, white surfaces #FFFFFF, dark graphite typography and lines #2C2C2C, primary indigo accent #6366F1. Use gold #C4A148 only as a tiny secondary accent. Do not use green as an accent except inside preserved real screenshots. Main headline typography must match the reference font class; for current premium references this means an ultra-condensed poster/display grotesk, not Geologica. Use Onest/Geologica only for captions, brand support text, and secondary UI-like labels. Calm, precise, practical, premium editorial style.
+Use Human 2.0 visual identity: light gray canvas #F3F4F6, white surfaces #FFFFFF, dark graphite typography and lines #2C2C2C, primary indigo accent #6366F1. Use gold #C4A148 only as a tiny secondary accent. Do not use green as an accent except inside preserved real screenshots. Main headline typography must match the active reference proportions; for current premium references this means a heavy condensed poster/display grotesk with natural Cyrillic width, not Geologica and not vertically stretched ultra-condensed text. Use Onest/Geologica only for captions, brand support text, and secondary UI-like labels. Calm, precise, practical, premium editorial style.
 
 Logo/footer:
 Use the official attached Human 2.0 logo asset exactly as provided. Preserve its aspect ratio and place it in the bottom-left safe zone. If no official logo asset is available, leave clean space for manual logo placement or use only the plain text footer `Человек 2.0 · Среда внедрения ИИ`. Do not redraw or approximate the logo.
@@ -350,7 +352,7 @@ Before finalizing, check the generated cover against these criteria:
 - Mandatory Reference Intake was completed before generation.
 - `references/reference-dna.md` was applied and the selected DNA archetype is visible.
 - The selected reference archetype and 3 concrete visual traits are visible in the result, not just mentioned in the prompt.
-- The headline font class matches the inspected reference; if the reference uses ultra-condensed display typography, the final headline is not rendered in Geologica, Onest, Arial, Arial Narrow, Inter, or Segoe UI.
+- The headline font class, width/height ratio, line rhythm, and margins match the inspected or user-supplied reference; the final headline is not Geologica, Onest, Arial, Arial Narrow, Inter, Segoe UI, or vertically stretched ultra-condensed text when the reference uses the Human 2.0 poster style.
 - The headline is understandable without reading the post.
 - For broad-audience covers, the practical benefit is clearer than the tool internals.
 - The image communicates one idea, not a list of features.

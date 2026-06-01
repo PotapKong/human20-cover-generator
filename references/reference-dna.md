@@ -4,7 +4,7 @@ Use this file after inspecting the actual reference images. It captures the shar
 
 ## What The Best References Have In Common
 
-- Huge ultra-condensed headline, usually left-weighted, with one indigo phrase or word.
+- Huge heavy condensed headline, usually left-weighted, with one indigo phrase or word. Match the active reference proportions; do not vertically stretch letters into ultra-narrow bars.
 - One dominant right-side proof/hero: premium object, phone/device, dark dashboard, real screenshot, product window, or editorial collage.
 - Cards, icons, and route lines are satellites around the hero. They do not become the whole cover unless the user explicitly asks for a workflow diagram.
 - The visual has tension: broken old model, opened route, spending spike, validation score, agent action, upgraded output, or proof being scanned.
