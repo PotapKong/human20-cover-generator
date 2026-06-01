@@ -52,6 +52,15 @@ If GPT Image cannot keep `human20.app` crisp at the chosen mascot size, use one 
 
 Do not accept a cover where the mascot is visible but its screen is a glowing blob, random glyphs, or unreadable pseudo-text.
 
+Do not paste the raw square `maskot.jpg` as a visible rectangular sticker. Integrate it as one of:
+
+- a clean cutout with a soft object shadow;
+- a circular or rounded H2.0 route/avatar bubble;
+- a generated scene element corrected with the official asset;
+- a partial overlay tucked behind a product panel or route node.
+
+The mascot should feel intentionally integrated with the cover grid, not like a file dropped on top.
+
 ## Prompt wording
 
 When an official asset is attached, write:
