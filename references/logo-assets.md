@@ -34,6 +34,8 @@ The logo block must align with the cover grid and surrounding spacing. It should
 
 ## Mascot fidelity
 
+For Human 2.0 covers, include the official mascot by default when the local asset exists at `references/images/maskot.jpg`, unless the user explicitly asks not to or the format would make it unreadable.
+
 If the Human 2.0 mascot is used, treat it as an official brand asset, not a generic robot sticker.
 
 The mascot's small screen must keep the exact readable text:

@@ -94,6 +94,7 @@ Do not call image generation if you cannot name the selected archetype and at le
    - primary indigo accent `#6366F1`
    - gold `#C4A148` only as a tiny secondary accent
    - reference-matched heavy condensed display typography for the main headline, with Onest/Geologica only for captions and brand support text
+   - official Human 2.0 mascot from `references/images/maskot.jpg` as a small brand companion when available
    - calm, precise, practical, premium editorial tone
 10. Generate the image with GPT Image 2 / built-in image generation when requested. Keep the final response concise: concept, headline, and any caveat about generated text/logo fidelity.
 
@@ -263,6 +264,9 @@ Use logos, mascots, screenshots, or website/article captures only when they mate
 
 Rules:
 
+- For Human 2.0 covers, include the official mascot by default when `references/images/maskot.jpg` is available, unless the user explicitly asks not to or the format would make it unreadable.
+- Prefer using the official mascot asset as a final composited overlay when exact identity matters. If GPT Image 2 invents or distorts the mascot, replace it with the official asset.
+- Place the mascot as a small brand companion near the hero object, route node, product panel, or proof chip. Do not let it compete with the headline, logo, or main proof.
 - Human 2.0 logos must come from official PNG/SVG assets from the brandbook at `human20.app/brand` or from attached official logo files.
 - If local official assets exist in `assets/brand/`, use them before falling back to plain text. Preferred horizontal cover asset: `assets/brand/h20-lockup-dark-1440.png` or `assets/brand/h20-lockup-dark.svg`.
 - Do not ask the image model to invent, redraw, retype, stretch, or approximate the Human 2.0 logo.
@@ -305,7 +309,7 @@ Reference evidence:
 Use these concrete traits from the 3-5 inspected references or gallery: <3-5 traits covering layout, typography scale, spacing, palette, motif, visual density, and whether the right-side visual should be a workflow, large screen, object, or mixed panel>.
 
 Asset sources:
-Use official or user-provided assets for all recognizable logos, product marks, mascots, website screenshots, GitHub screenshots, and article screenshots. If the product is Hermes, use Hermes Agent by Nous Research as the source, not a generic Hermes mark. If an official asset is unavailable, use a text-only product card and do not invent a fake logo.
+Use official or user-provided assets for all recognizable logos, product marks, mascots, website screenshots, GitHub screenshots, and article screenshots. For Human 2.0 covers, use `references/images/maskot.jpg` as the official mascot asset when available and keep its `human20.app` screen readable. If the product is Hermes, use Hermes Agent by Nous Research as the source, not a generic Hermes mark. If an official asset is unavailable, use a text-only product card and do not invent a fake logo.
 
 Brand style:
 Use Human 2.0 visual identity: light gray canvas #F3F4F6, white surfaces #FFFFFF, dark graphite typography and lines #2C2C2C, primary indigo accent #6366F1. Use gold #C4A148 only as a tiny secondary accent. Do not use green as an accent except inside preserved real screenshots. Main headline typography must match the active reference proportions; for current premium references this means a heavy condensed poster/display grotesk with natural Cyrillic width, not Geologica and not vertically stretched ultra-condensed text. Use Onest/Geologica only for captions, brand support text, and secondary UI-like labels. Calm, precise, practical, premium editorial style.
@@ -363,6 +367,7 @@ Before finalizing, check the generated cover against these criteria:
 - The palette reads Human 2.0, not purple SaaS, cyberpunk, or stock tech.
 - Custom accents are indigo/blue `#6366F1`, not green/lime.
 - Gold is a small accent, not the dominant look.
+- Human 2.0 mascot from `references/images/maskot.jpg` is present as a small brand companion when available, unless explicitly excluded or visually unsuitable.
 - Human 2.0 logo is either an official asset, a plain text fallback, or absent with clean space reserved for manual placement.
 - Third-party logos are official/user-provided assets or replaced with text-only cards.
 - Any logo that must be exact was composited from an official asset after generation, or clean space was reserved for manual placement.
