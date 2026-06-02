@@ -38,6 +38,7 @@ Before calling image generation or writing a final image prompt, you MUST comple
 Always read these reference files for new cover generation:
 
 - `references/reference-dna.md`
+- `references/mascot-assets.md`
 - `references/headline-patterns.md`
 - `references/reference-gallery.md`
 - `references/visual-system.md`
@@ -64,6 +65,8 @@ Before image generation, name the reference intake in your working notes or prom
 - selected Reference DNA archetype
 - 3-5 visible traits copied from the references or gallery
 - typography rule, including whether user-supplied references override the default condensed class
+- headline placement plan, with a reason it fits this specific visual
+- mascot integration plan, describing how the mascot participates in the generated scene
 - palette rule
 - anti-patterns being actively avoided
 
@@ -91,10 +94,12 @@ Do not call image generation if you cannot name the selected archetype and at le
    - canvas `#F3F4F6`
    - white surfaces `#FFFFFF`
    - graphite text/lines `#2C2C2C`
-   - primary indigo accent `#6366F1`
+   - primary brand blue accent `#2C44F5`
+   - logo/mark gradient may use `#6C84FF -> #2C44F5`, but flat headline and UI accents use `#2C44F5`
+   - never use purple, violet, generic indigo, or Tailwind-style `#6366F1` for headline accents, routes, nodes, or UI highlights
    - gold `#C4A148` only as a tiny secondary accent
    - reference-matched heavy condensed display typography for the main headline, with Onest/Geologica only for captions and brand support text
-   - official Human 2.0 mascot from `references/images/maskot.jpg` as a small brand companion when available
+   - official Human 2.0 mascot from `references/images/maskot.jpg` as a mandatory generated scene participant when available
    - calm, precise, practical, premium editorial tone
 10. Generate the image with GPT Image 2 / built-in image generation when requested. Keep the final response concise: concept, headline, and any caveat about generated text/logo fidelity.
 
@@ -161,7 +166,9 @@ If the user proposes a better headline, use it and regenerate rather than defend
 
 ## Composition Rules
 
-Default 16:9 structure: large headline + one strong generated visual answer: either a hyperreal/editorial hero object, a cinematic product scene, a framed real screenshot/evidence moment, or one concise product surface. Add a continuous indigo path only when it clarifies the idea. Use at most 3-4 meaningful visual elements.
+Default 16:9 structure: large headline + one strong generated visual answer: either a hyperreal/editorial hero object, a cinematic product scene, a framed real screenshot/evidence moment, or one concise product surface. Add a continuous brand-blue path only when it clarifies the idea. Use at most 3-4 meaningful visual elements.
+
+Headline placement is not fixed. Choose the headline zone from the metaphor and reference image, then state the choice in the prompt. Valid horizontal-cover placements include left block, right block, top band, lower band, centered negative-space block, or asymmetric overlay on a calm part of the hero. The headline must remain the primary entry point, but it does not always need to be on the left. Reject layouts that keep putting text on the left by habit when the object, screenshot, or mascot-led scene would be stronger with another placement.
 
 Do not default to a repeated right-side workflow/card block just because the article mentions processes, tools, or skills. Use that structure only when the inspected references support it for the specific topic. If `TOP Reference` is present, prefer its premium editorial object/hero rhythm over a generic card grid: expressive headline, one strong object or framed evidence, controlled depth, and sparse supporting icons.
 
@@ -182,7 +189,7 @@ The best Human 2.0 covers feel like editorial posters, not SaaS wireframes. A st
 
 - one thumb-stopping object or product scene with depth, gloss, rupture, light, material contrast, or motion;
 - a huge reference-matched condensed headline that dominates the feed without looking vertically stretched;
-- Human 2.0 white/indigo/gold system elements integrated into the scene, not pasted as decoration;
+- Human 2.0 white/brand-blue/gold system elements integrated into the scene, not pasted as decoration;
 - small supporting UI icons/cards only as satellites around the hero, never as the main content by default;
 - visible tension from the article: broken old habit, opened route, controlled pipeline, finished artifact, warning state, or upgrade moment.
 
@@ -202,10 +209,11 @@ Do not generate until the prompt names one of these and describes the dominant p
 
 Signature Human 2.0 elements:
 
-- Huge heavy condensed display headline, black with 1 indigo accent word.
+- Huge heavy condensed display headline, black with 1 brand-blue accent word.
 - White rounded panels with soft shadows.
-- Thin indigo connector lines with small circular nodes.
+- Thin brand-blue connector lines with small circular nodes.
 - Small official H2.0 / Human 2.0 logo asset in the bottom-left safe zone.
+- Mandatory Human 2.0 mascot generated as part of the same scene, with shared lighting, shadow, perspective, and role in the metaphor.
 - Optional 3x3 dot pattern in top-right or bottom-left.
 - Tiny gold dot, spark, divider, or checkmark only as accent.
 - Strong negative space and calm premium editorial layout.
@@ -216,7 +224,8 @@ Typography and color must match the reference system closely:
 - Do not interpret `condensed` as permission to vertically stretch or make needle-thin letters. If the headline looks like ultra-condensed vertical bars or is about 1.25x taller/narrower than the active reference, reject it.
 - Do not default to `Geologica.ttf` for the main headline when references show this condensed poster style. Geologica is too wide/soft for those covers and is only a fallback for non-reference work.
 - If rendering typography manually and no exact reference font is bundled, prefer an available licensed heavy condensed Cyrillic display face with comparable proportions over Geologica/Arial Narrow. If exact fidelity is required, stop and ask for or source the exact display font asset.
-- Use graphite `#2C2C2C` for dark headline words and `#6366F1` for the single indigo accent phrase.
+- Use graphite `#2C2C2C` for dark headline words and `#2C44F5` for the single brand-blue accent phrase.
+- Treat `#2C44F5` as the flat brand accent for generated headline text, routes, nodes, cards, and interface details. `#6C84FF` is allowed only as the light end of the official H2.0 logo/mark gradient or subtle blue glow. Do not substitute `#6366F1`, violet, purple, lavender, or generic indigo.
 - If rendering secondary brand text manually, use the bundled `assets/brand/Geologica.ttf` or `assets/brand/Onest.ttf` where appropriate.
 - Do not let screenshots or generated gradients drift the overall palette away from the Human 2.0 reference.
 
@@ -225,7 +234,7 @@ Typography and color must match the reference system closely:
 For every Dzen / Telegram / horizontal Human 2.0 cover:
 
 1. Inspect the supplied/user/exported references and name the headline font class before rendering.
-2. If user-supplied typography references are present, they override generic bundled wording. The main headline must match their visible proportions, line height, left spacing, and black/indigo rhythm.
+2. If user-supplied typography references are present, they override generic bundled wording. The main headline must match their visible proportions, line height, spacing discipline, and black/brand blue rhythm. Preserve the reference's confident margins without forcing every headline to the left.
 3. Preferred durable asset order:
    - exact user-provided or repo-bundled licensed display font, such as `assets/brand/h20-display-condensed.ttf` if present;
    - an available licensed heavy condensed Cyrillic display face with comparable proportions;
@@ -264,9 +273,11 @@ Use logos, mascots, screenshots, or website/article captures only when they mate
 
 Rules:
 
-- For Human 2.0 covers, include the official mascot by default when `references/images/maskot.jpg` is available, unless the user explicitly asks not to or the format would make it unreadable.
-- Prefer using the official mascot asset as a final composited overlay when exact identity matters. If GPT Image 2 invents or distorts the mascot, replace it with the official asset.
-- Place the mascot as a small brand companion near the hero object, route node, product panel, or proof chip. Do not let it compete with the headline, logo, or main proof.
+- For Human 2.0 covers and branded generated images, the mascot is mandatory when `references/images/maskot.jpg` is available, unless the user explicitly asks to exclude it.
+- The first generation prompt must make the mascot part of the composition: a scene participant, operator, observer, helper, route-node companion, product-surface companion, or tiny physical brand character with matching lighting, shadows, perspective, reflections, and occlusion. It must not look like a sticker, badge, pasted PNG, detached circular avatar, or post-production overlay.
+- If GPT Image 2 omits the mascot or makes it feel pasted on, regenerate with a stronger integrated mascot role. Do not fix a missing or sticker-like mascot by compositing the mascot over the cover.
+- Use the official mascot asset as identity reference. Manual correction is allowed only for narrow fixes after the mascot is already integrated, such as sharpening the `human20.app` screen or correcting a small distorted detail. Do not replace the whole mascot with a pasted cutout unless the user explicitly requests a deterministic composite.
+- Place the mascot near the hero object, route node, product panel, proof chip, or foreground surface where it can naturally interact with the metaphor. Do not let it compete with the headline, logo, or main proof.
 - Human 2.0 logos must come from official PNG/SVG assets from the brandbook at `human20.app/brand` or from attached official logo files.
 - If local official assets exist in `assets/brand/`, use them before falling back to plain text. Preferred horizontal cover asset: `assets/brand/h20-lockup-dark-1440.png` or `assets/brand/h20-lockup-dark.svg`.
 - Do not ask the image model to invent, redraw, retype, stretch, or approximate the Human 2.0 logo.
@@ -309,10 +320,10 @@ Reference evidence:
 Use these concrete traits from the 3-5 inspected references or gallery: <3-5 traits covering layout, typography scale, spacing, palette, motif, visual density, and whether the right-side visual should be a workflow, large screen, object, or mixed panel>.
 
 Asset sources:
-Use official or user-provided assets for all recognizable logos, product marks, mascots, website screenshots, GitHub screenshots, and article screenshots. For Human 2.0 covers, use `references/images/maskot.jpg` as the official mascot asset when available and keep its `human20.app` screen readable. If the product is Hermes, use Hermes Agent by Nous Research as the source, not a generic Hermes mark. If an official asset is unavailable, use a text-only product card and do not invent a fake logo.
+Use official or user-provided assets for all recognizable logos, product marks, mascots, website screenshots, GitHub screenshots, and article screenshots. For Human 2.0 covers, use `references/images/maskot.jpg` as the official mascot identity reference when available and generate the mascot as an organic part of the scene. Keep its `human20.app` screen readable when visible. If the product is Hermes, use Hermes Agent by Nous Research as the source, not a generic Hermes mark. If an official asset is unavailable, use a text-only product card and do not invent a fake logo.
 
 Brand style:
-Use Human 2.0 visual identity: light gray canvas #F3F4F6, white surfaces #FFFFFF, dark graphite typography and lines #2C2C2C, primary indigo accent #6366F1. Use gold #C4A148 only as a tiny secondary accent. Do not use green as an accent except inside preserved real screenshots. Main headline typography must match the active reference proportions; for current premium references this means a heavy condensed poster/display grotesk with natural Cyrillic width, not Geologica and not vertically stretched ultra-condensed text. Use Onest/Geologica only for captions, brand support text, and secondary UI-like labels. Calm, precise, practical, premium editorial style.
+Use Human 2.0 visual identity: light gray canvas #F3F4F6, white surfaces #FFFFFF, dark graphite typography and lines #2C2C2C, primary brand blue accent #2C44F5. Use #2C44F5 for flat headline accents, routes, nodes, badges, and UI highlights; #6C84FF may appear only as the light side of the official H2.0 logo/mark gradient or a subtle blue glow. Never use purple, violet, lavender, generic indigo, or Tailwind-style #6366F1 for the headline accent or route system. Use gold #C4A148 only as a tiny secondary accent. Do not use green as an accent except inside preserved real screenshots. Main headline typography must match the active reference proportions; for current premium references this means a heavy condensed poster/display grotesk with natural Cyrillic width, not Geologica and not vertically stretched ultra-condensed text. Use Onest/Geologica only for captions, brand support text, and secondary UI-like labels. Calm, precise, practical, premium editorial style.
 
 Logo/footer:
 Use the official attached Human 2.0 logo asset exactly as provided. Preserve its aspect ratio and place it in the bottom-left safe zone. If no official logo asset is available, leave clean space for manual logo placement or use only the plain text footer `Человек 2.0 · Среда внедрения ИИ`. Do not redraw or approximate the logo.
@@ -324,7 +335,10 @@ Visual concept:
 <one sparse metaphor with 3-4 elements max>
 
 Composition:
-<mode-specific composition from references/formats.md and references/generation-modes.md>. Make this a finished GPT Image 2 cover, not a blank base for later layout. Use restrained indigo connectors/paths and tiny gold accent only where useful.
+<mode-specific composition from references/formats.md and references/generation-modes.md>. Choose a headline placement deliberately: left, right, top, lower band, centered negative space, or asymmetric overlay, whichever best supports the hero visual. Make this a finished GPT Image 2 cover, not a blank base for later layout. Use restrained brand-blue connectors/paths and tiny gold accent only where useful.
+
+Mascot integration:
+Generate the Human 2.0 mascot as part of the same camera pass and scene. It should share the scene's light, shadow, perspective, depth, and material reflections, and should participate in the metaphor rather than sit on top of it as a separate sticker.
 
 Text on image:
 Use only this Russian headline, large and clean:
@@ -357,6 +371,7 @@ Before finalizing, check the generated cover against these criteria:
 - `references/reference-dna.md` was applied and the selected DNA archetype is visible.
 - The selected reference archetype and 3 concrete visual traits are visible in the result, not just mentioned in the prompt.
 - The headline font class, width/height ratio, line rhythm, and margins match the inspected or user-supplied reference; the final headline is not Geologica, Onest, Arial, Arial Narrow, Inter, Segoe UI, or vertically stretched ultra-condensed text when the reference uses the Human 2.0 poster style.
+- The headline placement was chosen for this composition and is not automatically left-side; it remains readable, dominant, and inside the safe zone.
 - The headline is understandable without reading the post.
 - For broad-audience covers, the practical benefit is clearer than the tool internals.
 - The image communicates one idea, not a list of features.
@@ -365,9 +380,11 @@ Before finalizing, check the generated cover against these criteria:
 - The result would not look like a generic reusable AI-template if the headline were swapped.
 - Cards/routes/icons are satellites around the hero unless the user asked for a workflow diagram.
 - The palette reads Human 2.0, not purple SaaS, cyberpunk, or stock tech.
-- Custom accents are indigo/blue `#6366F1`, not green/lime.
+- Custom accents are brand blue `#2C44F5`, not green/lime.
+- Accent color did not drift toward purple, violet, lavender, generic indigo, or `#6366F1`; flat text and line accents match the brandbook/reference blue.
 - Gold is a small accent, not the dominant look.
-- Human 2.0 mascot from `references/images/maskot.jpg` is present as a small brand companion when available, unless explicitly excluded or visually unsuitable.
+- Human 2.0 mascot from `references/images/maskot.jpg` is present when available, unless explicitly excluded by the user.
+- The mascot is generated as an organic part of the composition with shared lighting, perspective, contact/shadow, and a clear role in the metaphor; it is not a sticker, detached badge, pasted PNG, or late overlay.
 - Human 2.0 logo is either an official asset, a plain text fallback, or absent with clean space reserved for manual placement.
 - Third-party logos are official/user-provided assets or replaced with text-only cards.
 - Any logo that must be exact was composited from an official asset after generation, or clean space was reserved for manual placement.

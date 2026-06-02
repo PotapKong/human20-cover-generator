@@ -20,7 +20,7 @@ Prompt emphasis:
 
 Good visual ideas:
 
-- white panel with indigo route
+- white panel with brand-blue route
 - chat card -> agent node -> result card
 - locked route vs open route
 - document stack -> skill card
@@ -38,7 +38,7 @@ Prompt emphasis:
 - shallow depth of field
 - soft blur and depth
 - white/light-gray studio background
-- indigo and gold brand reflections
+- brand blue and gold brand reflections
 - abstract Human 2.0 UI elements around it
 - bold editorial tension: breaking, opening, scanning, validating, routing, upgrading, or transforming
 - no cyberpunk, no neon, no generic stock tech
@@ -73,7 +73,7 @@ Use only when the user asks for a process/workflow visual or when the article's 
 
 Prompt emphasis:
 
-- one continuous indigo route line
+- one continuous brand-blue route line
 - white rounded panels
 - 3-5 abstract tool cards
 - small nodes and arrows

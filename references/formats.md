@@ -8,11 +8,13 @@ Goal: strong article thumbnail.
 
 Composition:
 
-- Headline occupies 35-45% of width.
-- Visual object/panel occupies 45-55% of width.
+- Headline occupies a dominant safe-zone block, usually 30-45% of the canvas depending on placement.
+- Visual object/panel occupies the counterbalancing zone, usually 45-60% of the canvas.
+- Choose headline placement deliberately: left block, right block, top band, lower band, centered negative-space block, or asymmetric overlay on a calm area. Do not force left placement when the hero visual works better elsewhere.
 - Keep 6-8% safe margins on every side.
 - Do not place critical text near edges.
 - Use 1 main metaphor.
+- Include the Human 2.0 mascot as an integrated generated scene participant when available, placed where it can interact naturally with the metaphor.
 - Small Human 2.0 / H2.0 brand mark in bottom-left or top-left safe zone.
 - Optional dot pattern in top-right.
 

@@ -7,10 +7,11 @@ Use this reference to keep generated images close to the current Human 2.0 cover
 Use this layout for Dzen / Telegram / article covers:
 
 - Light gray canvas `#F3F4F6`.
-- Large bold headline on the left, usually 2-3 lines.
-- One accent word or phrase in indigo `#6366F1`.
-- Main visual object or white rounded panel on the right.
-- Thin indigo connector lines, small circular nodes.
+- Large bold headline in the strongest negative-space zone, usually 2-3 lines. Left placement is common, but right, top, lower-band, centered, or asymmetric overlay placement is allowed when it better supports the hero visual.
+- One accent word or phrase in brand blue `#2C44F5`.
+- Main visual object or white rounded panel counterbalances the headline.
+- Thin brand-blue connector lines, small circular nodes.
+- Human 2.0 mascot generated as part of the same scene, naturally interacting with the hero object, route, proof panel, or foreground surface.
 - Small official H2.0 / Human 2.0 logo asset in the bottom-left safe zone.
 - Optional 3x3 dot pattern in top-right or bottom-left.
 - Tiny gold `#C4A148` accent only as dot, spark, checkmark, or divider.
@@ -24,17 +25,20 @@ Use the official Human 2.0 brandbook as the source of truth: `human20.app/brand`
 
 Palette:
 
-- Accent / H2.0 sign: `#6366F1`
+- Flat accent / H2.0 blue: `#2C44F5`
+- H2.0 mark gradient: `#6C84FF -> #2C44F5`
 - Primary text: `#2C2C2C`
 - Canvas background: `#F3F4F6`
 - Surface background: `#FFFFFF`
 - Gold accent: `#C4A148`
 
-The primary accent is always indigo/blue `#6366F1`. Use it for highlighted words, connector lines, nodes, arrows, progress bars, active UI states, and badges.
+The primary flat accent is always brand blue `#2C44F5`. Use it for highlighted words, connector lines, nodes, arrows, progress bars, active UI states, and badges.
+
+Use `#6C84FF` only as the light side of the official H2.0 logo/mark gradient or a restrained blue glow that resolves back to `#2C44F5`. Do not use purple, violet, lavender, generic indigo, or Tailwind-style `#6366F1` for headline accents, routes, nodes, badges, or UI highlights.
 
 Gold `#C4A148` is secondary and should stay tiny: one dot, small spark, small checkmark, minor divider, or micro-highlight.
 
-Do not use green as a Human 2.0 accent color. Green is allowed only if it is part of a real screenshot or official third-party UI that must be preserved. When adapting UI cards into the Human 2.0 style, replace non-essential green accents with indigo/blue.
+Do not use green as a Human 2.0 accent color. Green is allowed only if it is part of a real screenshot or official third-party UI that must be preserved. When adapting UI cards into the Human 2.0 style, replace non-essential green accents with brand blue.
 
 ## Visual hierarchy
 
@@ -77,9 +81,9 @@ Never write:
 
 Good Human 2.0 covers often include:
 
-- oversized black headline with one indigo keyword
+- oversized black headline with one brand-blue keyword
 - white rounded cards, panels, or dashboard surfaces
-- one continuous indigo route line from input to output
+- one continuous brand-blue route line from input to output
 - small gold validation dot or spark
 - reduced UI text represented as abstract bars
 - premium restraint: no unnecessary labels, no busy backgrounds
@@ -90,5 +94,5 @@ When adding a hyperreal object, keep it as the single hero object:
 
 - crown, glass robot, iceberg, notebook, physical card, device, control dial, or cinematic UI object
 - shallow depth of field and soft blur are allowed
-- object lighting may use subtle indigo/gold reflections
+- object lighting may use subtle brand-blue/gold reflections
 - do not turn the image into cyberpunk, neon, sci-fi poster, or stock-photo collage

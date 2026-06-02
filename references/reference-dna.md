@@ -4,9 +4,10 @@ Use this file after inspecting the actual reference images. It captures the shar
 
 ## What The Best References Have In Common
 
-- Huge heavy condensed headline, usually left-weighted, with one indigo phrase or word. Match the active reference proportions; do not vertically stretch letters into ultra-narrow bars.
-- One dominant right-side proof/hero: premium object, phone/device, dark dashboard, real screenshot, product window, or editorial collage.
+- Huge heavy condensed headline, often left-weighted but not fixed, with one brand-blue phrase or word. Match the active reference proportions; do not vertically stretch letters into ultra-narrow bars.
+- One dominant proof/hero, usually counterbalancing the headline: premium object, phone/device, dark dashboard, real screenshot, product window, or editorial collage.
 - Cards, icons, and route lines are satellites around the hero. They do not become the whole cover unless the user explicitly asks for a workflow diagram.
+- The Human 2.0 mascot is present as an organic generated scene participant when available, sharing the light, shadows, perspective, and metaphor with the hero.
 - The visual has tension: broken old model, opened route, spending spike, validation score, agent action, upgraded output, or proof being scanned.
 - The composition feels generated and tactile: depth, shadows, reflections, blur, material detail, screenshots, or realistic product surfaces.
 - Human 2.0 brand block is integrated into the grid. Common placements: top-left lockup, bottom-left lockup, or compact badge with text to the right. It should never look pasted on after the layout was finished.
@@ -19,13 +20,13 @@ Use this file after inspecting the actual reference images. It captures the shar
 
 Use for claims where an old market, habit, or category is dead.
 
-Look: large headline, red/black strike or disruption mark, hyperreal gold object breaking or glowing, small floating UI icons, indigo/gold particles.
+Look: large headline, red/black strike or disruption mark, hyperreal gold object breaking or glowing, small floating UI icons, brand-blue/gold particles.
 
 ### Premium Device / Agent Inside
 
 Use for device, phone, app, or embedded-agent posts.
 
-Look: large product render on the right, small feature cards orbiting it, thin indigo routes, headline on the left, brand lockup bottom-left.
+Look: large product render counterbalancing the headline, small feature cards orbiting it, thin brand-blue routes, integrated Human 2.0 mascot operating or inspecting the product scene, brand lockup in a safe-zone grid position.
 
 ### Evidence Collage
 
@@ -37,7 +38,7 @@ Look: 3-5 tilted or layered real panels around one central product/source card. 
 
 Use when a screenshot is the proof: conference page, browser audit, Windows/Paint, dashboard, code tool, product page.
 
-Look: screenshot framed in a large white rounded panel on the right, headline and 1-3 short support cards on the left/bottom. Preserve screenshot identity.
+Look: screenshot framed in a large white rounded panel, headline and 1-3 short support cards placed in the strongest safe-zone around it. Preserve screenshot identity.
 
 ### Before / After Product Outcome
 

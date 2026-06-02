@@ -12,7 +12,7 @@ Target traits:
 - tall compact forms, but natural proportions;
 - hard vertical strokes and minimal roundness;
 - tight line height;
-- strong black / indigo word contrast;
+- strong black / brand blue word contrast;
 - enough letter width for thumbnail readability.
 
 Avoid:
@@ -28,19 +28,19 @@ Avoid:
 When the user supplies typography references, treat them as the quality bar.
 
 - Match the apparent headline width/height ratio from the reference before matching any generic "ultra-condensed" label.
-- Keep the headline block close to the reference rhythm: large all-caps lines, tight but readable leading, and generous left padding.
+- Keep the headline block close to the reference rhythm: large all-caps lines, tight but readable leading, and generous safe-zone padding. Match the chosen placement's margins rather than forcing left padding.
 - If a generated headline looks more than about 1.25x taller/narrower than the supplied reference, reject it.
 - If the user says the font is too stretched, regenerate or correct with a face about 1.5x less vertically stretched.
-- Use one indigo accent line or phrase; do not scatter accent color across many words.
+- Use one brand-blue accent line or phrase; do not scatter accent color across many words.
 
 ## Layout Traits From The Current References
 
 The supplied poster references show:
 
-- headline anchored left, with a calm light-gray/white field around it;
+- headline anchored in a calm light-gray/white field, often left but not required;
 - 3-4 strong lines, not one huge squeezed word;
-- black first lines and one indigo final/accent line;
-- consistent left edge and strong top/left margins;
+- black first lines and one brand-blue final/accent line;
+- consistent headline edge and strong safe-zone margins;
 - no tiny subtitle unless the composition has clear space below the headline.
 
 For a two-line headline, preserve the same feel by making each line broad and readable rather than taller and narrower.

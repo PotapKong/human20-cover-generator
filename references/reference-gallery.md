@@ -8,10 +8,10 @@ Before generating a cover, inspect the most relevant visual examples in `referen
 
 If `references/images/` contains a file whose name starts with `TOP Reference`, inspect it first. It is the primary quality bar for premium Human 2.0 Dzen / Telegram covers:
 
-- huge heavy condensed headline with black and indigo contrast
+- huge heavy condensed headline with black and brand blue contrast
 - expressive editorial object or framed evidence, not a default card grid
 - controlled depth, blur, reflections, or material detail when useful
-- restrained Human 2.0 palette with indigo and tiny gold accents
+- restrained Human 2.0 palette with brand blue and tiny gold accents
 - real H2.0 logo/lockup kept exact and small
 - sparse supporting icons/nodes, never a dense process diagram
 
@@ -38,10 +38,10 @@ Best for: posts where the workflow itself is the story. Do not choose this only 
 Look:
 
 - 16:9 light-gray canvas
-- huge black headline on the left
-- one indigo keyword in headline
+- huge black headline in a dominant safe-zone block; left placement is common but not required
+- one brand-blue keyword in headline
 - large white rounded panel in center/right only if it contains real evidence or one clear product surface
-- thin indigo connector path
+- thin brand-blue connector path
 - 2-4 clean UI cards or icons max, never as filler
 - H2.0 badge bottom-left
 - 3x3 dot pattern top-right
@@ -62,7 +62,7 @@ Look:
 - one clean product metaphor
 - few cards showing what changed
 - white panel with subtle depth
-- small brand logo or mascot only if supplied or recognizable
+- integrated Human 2.0 mascot as a small generated scene participant when available
 - Human 2.0 footer kept small
 
 Good patterns:
@@ -82,9 +82,9 @@ Look:
 - one hero object with shallow depth of field
 - white/light-gray background
 - controlled blur and shadow
-- indigo/gold reflections
+- brand-blue/gold reflections
 - minimal floating UI icons
-- large headline on the left or top
+- large headline in the strongest negative-space zone: left, top, right, lower band, or asymmetric overlay
 
 Good objects:
 
@@ -147,7 +147,7 @@ Look:
 
 - narrow horizontal or 16:9 layout
 - 3-5 white statistic cards
-- large indigo numbers
+- large brand-blue numbers
 - small gray descriptions
 - one thin connector or divider line
 - source line only if readable
@@ -200,7 +200,7 @@ A good result should feel like a premium editorial slide from the same visual sy
 - one clear visual metaphor
 - lots of air
 - white cards
-- indigo linework
+- brand-blue linework
 - tiny gold accents
 - no generic tech noise
 - no tiny fake text

@@ -86,7 +86,7 @@ Known official details:
 - Poly Blue: `#2E5CFF`
 - Font direction: Inter
 
-For Human 2.0 covers, keep Polymarket as a small official chip, market-question card, or entry-point badge inside the Human 2.0 layout. Do not let the Polymarket blue replace Human 2.0 indigo as the main accent.
+For Human 2.0 covers, keep Polymarket as a small official chip, market-question card, or entry-point badge inside the Human 2.0 layout. Do not let the Polymarket blue replace Human 2.0 brand blue as the main accent.
 
 If exact logo fidelity matters, download the logo pack and composite the official PNG/SVG after generation. If that is not possible, use a text-only card:
 

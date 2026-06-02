@@ -34,7 +34,8 @@ Do not drift away from the Human 2.0 brand palette.
 
 Correct palette:
 
-- indigo/blue `#6366F1` as the primary accent
+- brand blue `#2C44F5` as the primary accent
+- optional H2.0 mark gradient `#6C84FF -> #2C44F5` only for logo/glow
 - graphite `#2C2C2C` for text and dark lines
 - light gray `#F3F4F6` for canvas
 - white `#FFFFFF` for surfaces
@@ -45,10 +46,12 @@ Avoid:
 - green or lime as primary accent
 - cyberpunk green/black styling
 - generic purple gradients
+- purple, violet, lavender, or generic indigo as an accent
+- Tailwind-style `#6366F1`, which makes the Human 2.0 blue read too purple
 - large gold fills
 - random extra colors
 
-Green is allowed only inside a preserved real screenshot or official third-party UI. If the UI card is being adapted to Human 2.0, replace green status indicators, progress bars, and code highlights with indigo/blue.
+Green is allowed only inside a preserved real screenshot or official third-party UI. If the UI card is being adapted to Human 2.0, replace green status indicators, progress bars, and code highlights with brand blue.
 
 ## Russian copy
 
@@ -77,7 +80,7 @@ Avoid generic purple dashboards, random floating cards with meaningless labels, 
 Replace with:
 
 - Human 2.0 white surfaces
-- indigo route lines
+- brand-blue route lines
 - small gold accents
 - one grounded metaphor from the article
 

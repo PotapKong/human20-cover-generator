@@ -27,16 +27,18 @@ For horizontal covers, prefer an integrated lockup:
 
 - H2.0 badge on the left, `Человек 2.0` and `Среда внедрения ИИ` to the right;
 - top-left when the hero object dominates the right side;
-- bottom-left when the headline begins high on the left;
+- bottom-left when the headline begins high or the hero dominates another zone;
 - compact badge-only only when the composition is already text-heavy.
 
 The logo block must align with the cover grid and surrounding spacing. It should not look like a late overlay.
 
 ## Mascot fidelity
 
-For Human 2.0 covers, include the official mascot by default when the local asset exists at `references/images/maskot.jpg`, unless the user explicitly asks not to or the format would make it unreadable.
+For Human 2.0 covers and branded generated images, include the official mascot whenever the local asset exists at `references/images/maskot.jpg`, unless the user explicitly asks not to.
 
-If the Human 2.0 mascot is used, treat it as an official brand asset, not a generic robot sticker.
+Treat the Human 2.0 mascot as an official brand asset, not a generic robot sticker.
+
+The first generation must integrate the mascot into the scene itself. It should share the same lighting, shadow, perspective, reflections, and depth as the hero object or proof panel. Give it a useful role: operator, observer, tiny assistant, route-node companion, device-side helper, panel inspector, or foreground character interacting with the metaphor.
 
 The mascot's small screen must keep the exact readable text:
 
@@ -48,18 +50,20 @@ If GPT Image cannot keep `human20.app` crisp at the chosen mascot size, use one 
 
 - scale the mascot up slightly;
 - keep the mascot screen clean and perform a narrow correction pass for the exact `human20.app` text;
-- composite the official mascot or corrected screen text after generation.
+- correct only the screen text or a small distorted detail after generation.
 
 Do not accept a cover where the mascot is visible but its screen is a glowing blob, random glyphs, or unreadable pseudo-text.
 
-Do not paste the raw square `maskot.jpg` as a visible rectangular sticker. Integrate it as one of:
+Do not paste the raw square `maskot.jpg` as a visible rectangular sticker. Do not solve a missing mascot by adding a detached circular avatar, badge, or PNG overlay. If the mascot is missing or sticker-like, regenerate with an explicit scene role.
 
-- a clean cutout with a soft object shadow;
-- a circular or rounded H2.0 route/avatar bubble;
-- a generated scene element corrected with the official asset;
-- a partial overlay tucked behind a product panel or route node.
+Integrate the mascot as one of:
 
-The mascot should feel intentionally integrated with the cover grid, not like a file dropped on top.
+- a generated physical helper beside the hero object;
+- a tiny operator touching a route node, device, switch, document, or product panel;
+- a foreground scene character with natural contact shadow;
+- a partially occluded assistant tucked behind a product panel or route node, still sharing the scene lighting.
+
+The mascot should feel intentionally integrated with the cover grid and camera pass, not like a file dropped on top.
 
 ## Prompt wording
 
@@ -67,9 +71,9 @@ When an official asset is attached, write:
 
 `Use the attached official Human 2.0 logo asset exactly as provided. Preserve the original aspect ratio. Place it in the bottom-left safe zone.`
 
-When the official mascot is attached or requested, add:
+When the official mascot is attached, requested, or available locally, add:
 
-`Use the attached official Human 2.0 mascot exactly as provided. Preserve its identity and proportions. The small screen on the mascot must read exactly: human20.app. Keep this text crisp and readable; if the mascot is too small, enlarge it or leave the screen for a correction pass.`
+`Generate the Human 2.0 mascot as an organic part of the same scene, using the attached/local mascot as identity reference. Preserve its white glossy form, black face screen, blue glowing eyes, wing-like side fins, and tiny screen text human20.app. It must share the scene lighting, shadow, perspective, and reflections; do not paste it as a separate sticker, badge, avatar bubble, or overlay.`
 
 ## Checks
 
@@ -81,5 +85,6 @@ Before finalizing, check that:
 - `human20.app` is readable on the mascot screen if the mascot is visible.
 - the logo is not stretched or retyped.
 - the mascot is not replaced with a generic robot.
+- the mascot is physically integrated into the generated scene, not pasted on afterward.
 - the logo does not compete with the main headline.
 - the badge and text sit as one lockup, not as disconnected pasted elements.

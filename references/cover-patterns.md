@@ -152,7 +152,7 @@ Add these constraints when the generator overcomplicates:
 - "No dense UI text, only abstract bars."
 - "No subscription button."
 - "No pricing table or benchmark table."
-- "Use one continuous indigo route line."
+- "Use one continuous brand-blue route line."
 - "Keep the brand logo small and integrated."
 - "The image should feel like a premium editorial cover, not a product infographic."
 
