@@ -8,11 +8,12 @@ Do not invent logos, product marks, mascots, website screenshots, dashboard scre
 
 Before generating a cover with recognizable products, collect the best available visual assets:
 
-1. Official website or product page.
-2. Official GitHub organization or repository.
-3. Official docs.
-4. User-provided screenshots or files.
-5. Public article screenshot only when the cover is explicitly about that article or news item.
+1. Local company logo library, when a logo is needed: read `references/company-logo-library.md` and run `scripts/find-company-logo.ps1 <brand> [default|mono]`.
+2. Official website or product page.
+3. Official GitHub organization or repository.
+4. Official docs.
+5. User-provided screenshots or files.
+6. Public article screenshot only when the cover is explicitly about that article or news item.
 
 Use the official asset as a reference or composited image. Do not redraw it from memory.
 
@@ -20,11 +21,18 @@ Use the official asset as a reference or composited image. Do not redraw it from
 
 When a post mentions a product or tool:
 
-1. Search the web for the official product/company page.
-2. Search the official GitHub repo or organization when the tool is open source.
-3. Search the official docs page if the logo is absent from the landing page.
-4. Open the page and inspect visible images, screenshots, and logos.
-5. If the exact logo cannot be obtained, use a text-only product card instead of a fake logo.
+1. If a recognizable logo would improve the cover, try the local logo library first:
+
+   ```powershell
+   .\scripts\find-company-logo.ps1 <brand> default
+   .\scripts\find-company-logo.ps1 <brand> mono
+   ```
+
+2. Search the web for the official product/company page.
+3. Search the official GitHub repo or organization when the tool is open source.
+4. Search the official docs page if the logo is absent from the landing page.
+5. Open the page and inspect visible images, screenshots, and logos.
+6. If the exact logo cannot be obtained, use a text-only product card instead of a fake logo.
 
 Recommended search patterns:
 
@@ -126,6 +134,7 @@ When assets are not available:
 
 Before finalizing:
 
+- Did we check the local company logo library before broad web search for needed third-party logos?
 - Did every recognizable product mark come from an official or user-provided asset?
 - If not, did we use a text-only fallback instead of a fake logo?
 - Is Hermes treated as Hermes Agent by Nous Research?

@@ -51,6 +51,7 @@ Read these conditionally:
 
 - `references/logo-assets.md` before adding any Human 2.0 logo or footer.
 - `references/product-assets.md` before adding third-party logos, product screenshots, website screenshots, GitHub screenshots, or article screenshots.
+- `references/company-logo-library.md` before adding recognizable third-party company, platform, product, or AI-tool logos.
 - `references/anti-patterns.md` before refinement, when text/logo/color fidelity matters, or when a previous generation missed the style.
 - `references/cover-patterns.md` when choosing between concepts or improving a weak metaphor.
 
@@ -284,6 +285,7 @@ Rules:
 - When exact logo fidelity matters, generate the cover with clean space for the logo and composite the official PNG/SVG asset after generation. Prompt-only logo recreation is not enough for final production.
 - If no official Human 2.0 asset is available, leave clean space for manual logo placement or use the plain text fallback `Человек 2.0 · Среда внедрения ИИ`.
 - For every named third-party product, platform, market, repository, or company that appears in the article or requested cover, read `references/product-assets.md` and check official sources before deciding whether to use a logo, product chip, screenshot, or text-only fallback.
+- For recognizable third-party company/tool logos, read `references/company-logo-library.md` and try `scripts/find-company-logo.ps1 <brand> [default|mono]` before general web search. Use the returned SVG path as the official asset source when found.
 - Third-party logos and product marks must come from official websites, official docs, official GitHub repositories, official social/profile assets, or user-provided reference files.
 - When exact third-party logo fidelity matters, use the official PNG/SVG as a final composited overlay or use a text-only product card. Do not rely on image generation to redraw the logo.
 - When the user mentions `Hermes`, `Hermes Agent`, or Hermes in the agent/tooling context, treat it as `Hermes Agent` by `Nous Research`. Use `hermes-agent.nousresearch.com`, `nousresearch.com`, or user-provided Hermes references as the visual source. Do not invent a winged H logo or generic Hermes mark.
@@ -320,7 +322,7 @@ Reference evidence:
 Use these concrete traits from the 3-5 inspected references or gallery: <3-5 traits covering layout, typography scale, spacing, palette, motif, visual density, and whether the right-side visual should be a workflow, large screen, object, or mixed panel>.
 
 Asset sources:
-Use official or user-provided assets for all recognizable logos, product marks, mascots, website screenshots, GitHub screenshots, and article screenshots. For Human 2.0 covers, use `references/images/maskot.jpg` as the official mascot identity reference when available and generate the mascot as an organic part of the scene. Keep its `human20.app` screen readable when visible. If the product is Hermes, use Hermes Agent by Nous Research as the source, not a generic Hermes mark. If an official asset is unavailable, use a text-only product card and do not invent a fake logo.
+Use official or user-provided assets for all recognizable logos, product marks, mascots, website screenshots, GitHub screenshots, and article screenshots. For third-party company/tool logos, first try the local logo library from `references/company-logo-library.md` with `scripts/find-company-logo.ps1`, then official websites/docs/GitHub if the local library misses. For Human 2.0 covers, use `references/images/maskot.jpg` as the official mascot identity reference when available and generate the mascot as an organic part of the scene. Keep its `human20.app` screen readable when visible. If the product is Hermes, use Hermes Agent by Nous Research as the source, not a generic Hermes mark. If an official asset is unavailable, use a text-only product card and do not invent a fake logo.
 
 Brand style:
 Use Human 2.0 visual identity: light gray canvas #F3F4F6, white surfaces #FFFFFF, dark graphite typography and lines #2C2C2C, primary brand blue accent #2C44F5. Use #2C44F5 for flat headline accents, routes, nodes, badges, and UI highlights; #6C84FF may appear only as the light side of the official H2.0 logo/mark gradient or a subtle blue glow. Never use purple, violet, lavender, generic indigo, or Tailwind-style #6366F1 for the headline accent or route system. Use gold #C4A148 only as a tiny secondary accent. Do not use green as an accent except inside preserved real screenshots. Main headline typography must match the active reference proportions; for current premium references this means a heavy condensed poster/display grotesk with natural Cyrillic width, not Geologica and not vertically stretched ultra-condensed text. Use Onest/Geologica only for captions, brand support text, and secondary UI-like labels. Calm, precise, practical, premium editorial style.
@@ -386,6 +388,7 @@ Before finalizing, check the generated cover against these criteria:
 - Human 2.0 mascot from `references/images/maskot.jpg` is present when available, unless explicitly excluded by the user.
 - The mascot is generated as an organic part of the composition with shared lighting, perspective, contact/shadow, and a clear role in the metaphor; it is not a sticker, detached badge, pasted PNG, or late overlay.
 - Human 2.0 logo is either an official asset, a plain text fallback, or absent with clean space reserved for manual placement.
+- Third-party company/tool logos were checked through `references/company-logo-library.md` and `scripts/find-company-logo.ps1` before broad web search when a logo was needed.
 - Third-party logos are official/user-provided assets or replaced with text-only cards.
 - Any logo that must be exact was composited from an official asset after generation, or clean space was reserved for manual placement.
 - If Hermes is mentioned, it is represented as Hermes Agent by Nous Research, not a fake generic Hermes logo.
